@@ -13,9 +13,11 @@
     <article>
         <a href="https://docs.google.com/document/d/1taxL0EvnJZAsyspMOUCZCPJbpaIAf0wxzTRMmPmrt0E/edit?usp=sharing">Preguntas Lab 1</a>
         <p>Soy Emiliano Pomar. Nací en CDMX pero llevo mucho tiempo viviendo en Querétaro. Mis intereses más fuertes son la música y el cine. Actualmente curso el 4to semestre de ingeniería en tecnologías computacionales. </p>
+        <hr>
         <ul>Mis datos de contacto son:</ul>
         <li>correo: A01709338@tec.mx</li>
         <li>whatsapp: 4425707090</li>
+        <hr>
         <ul>Mis discos favoritos : </ul>
         <img src="soundtracksfortheblind.jpg" width="280" height="280" alt="soundtracks for the blind (1995)- swans"> 
         <img src="velvet.jpg" width="280" height="280" alt="The Velvet Underground (1969) - "> 
@@ -24,12 +26,141 @@
         <img src="double.jpg" width="280" height="280" alt="Double Nickels on the Dime (1984) - Minutemen"> 
         <img src="bm.jpeg" width="280" height="280" alt="Hellfire (2022) - Black Midi"> 
         <img src="masterofreality.jpg" width="280" height="280" alt="Master of Reality (1971) - Black Sabbath"> 
+        <hr>
         <ul>Mis películas favoritas : </ul>
         <img src="mulholland_drive_ver1_xxlg.jpg" width="343" height="508" alt="Mulholland Drive (2001)"> 
         <img src="taxi driver.jpg" width="343" height="508" alt="Taxi Driver (1976)"> 
         <img src="reservoir-dogs.webp" width="343" height="508" alt="Reservoir Dogs(1992)"> 
         <img src="twinpeaks.jpg" width="343" height="508" alt="Twin Peaks: Fire Walk With Me (1992)"> 
-        
+        <hr>
+        <strong>Preguntas Lab 1</strong>
+        <hr>
+        <strong>¿Cuál es la diferencia entre Internet y la World Wide Web?</strong>
+        <p>
+            El internet se refiere a una red de conexiones que tienen las computadoras alrededor del mundo. El internet es el medio. Y la World Wide Web es un sistema que se utiliza para gestionar la información en internet utilizando direcciones url y protocolos como http. La red que funciona en internet. 
+        </p>
+        <hr>
+        <strong>¿Cuáles son las partes de un URL? </strong>
+        <p>
+            protocolo de comunicación: comúnmente http y https.
+            dominio:  identificador de dirección de la computadora donde nos estamos conectando.
+            path/directorio: muestra dónde está ubicada la fuente. 
+            variables: se pueden poner variables al final del url y darles valor con signos =?+. Se puede definir el query cuando buscas algo en google por ejemplo. 
+        </p>
+        <hr>
+        <strong>¿Cuál es el propósito de los métodos HTTP: GET, HEAD, POST, PUT, PATCH, DELETE?
+        </strong>
+        <p>
+            Get: Se utiliza para pedir información de la fuente sin que esta esté alterada. Lo utiliza un navegador cada vez que ponemos una ruta, es mandar una petición http para obtener información. Todos los hipervínculos hacen peticiones tipo get. 
+
+
+            Head: Es como usar get pero solo para pedir la parte de “head” sin que regrese algo del “body”.
+            
+            
+            Post: Se utiliza para mandar información a un servidor. Con https va con el head normal y el body cifrado. 
+            
+            
+            Put: Se utiliza para editar el contenido en la fuente o resource desde el body.  
+            Patch: se utiliza para aplicar modificaciones parciales o que van a corregir algo. 
+            Delete: al utilizarlo, se elimina el resource.
+            
+        </p>
+        <hr>
+        <strong>¿Qué método HTTP se debe utilizar al enviar un formulario HTML, por ejemplo cuando ingresas tu usuario y contraseña en algún sitio? ¿Por qué?</strong>
+        <p>El método get y post pueden utilizarse para mandar un formulario, pero es más recomendable utilizar post ya que get tiene limitaciones. Además de que Post manda lo que codifica a través del body encriptado y no aparece en la url. 
+        </p>
+        <hr>
+        <strong>¿Qué método HTTP se utiliza cuando a través de un navegador web se accede a una página a través de un URL?</strong>
+        <p>Get</p>
+        <hr>
+        <strong>Un servidor web devuelve una respuesta HTTP con código 200. ¿Qué significa esto? ¿Ocurrió algún error? 
+        </strong>
+        <p>Indica una solicitud exitosa. En otras palabras, la página carga correctamente con texto, imágenes, etc. No ocurrió ningún error.</p>
+        <hr>
+        <strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 404? ¿Por qué?
+        </strong>
+        <p>Not Found. En algunos casos sí ya que puede ser que la página no existe porque el administrador modificó el url o lo transfirió, sin embargo la mayoría de las veces ocurre porque está mal escrito el url. Normalmente todos los códigos de 400 son responsabilidad o errores del cliente. </p>
+        <hr>
+        <strong>¿Es responsabilidad del desarrollador corregir un sitio web si un usuario reporta que intentó acceder al sitio y se encontró con un error 500? ¿Por qué?
+        </strong>
+        <p>Es un error muy general del servidor que se da por una falla en el código y si es responsabilidad de los desarrolladores para encontrar el código y solucionarlo. Normalmente los errores de 500, son errores de servidor. </p>
+        <hr>
+        <strong>¿Qué significa que un atributo HTML5 esté depreciado o desaprobado (deprecated)? Menciona algunos elementos de HTML 4 que en HTML5 estén desaprobados.
+        </strong>
+        <p>
+            Los atributos depreciados no se recomiendan según los estándares de html5 ya que son viejos y están siendo reemplazados por atributos nuevos que cumplen con la misma funcionalidad. En html 4 se utilizan letras como “i” para itálicas y “b” para bold. Pero en html 5 se introdujo la forma de semántica en el texto, así que con solo usar palabras como “strong” se puede aplicar un bold a las palabras y además agregarle contexto para los demás lenguajes de programación con los que trabaja html. 
+
+        </p>
+        <hr>
+        <strong>¿Cuáles son las diferencias principales entre HTML 4 y HTML5?
+        </strong>
+        <p>
+            HTML5 fue una actualización que introdujo soporte multimedia y mayor compatibilidad con los navegadores. Se dice que con HTML4 las páginas se podían romper fácilmente debido a las funciones ya obsoletas que no tenían semántica y no podían comunicarse bien con otros lenguajes de programación. 
+            Así que yo diría que la mayor diferencia es la mejora en compatibilidad que tiene HTML5 sobre HTML4 al introducir nuevos atributos y capacidades. 
+        </p>
+        <hr>
+        <strong>¿Qué componentes de estructura y estilo tiene una tabla?</strong>
+        <p>
+            Se utiliza “table” para definir la tabla. 
+            Se utiliza “tr” para las filas.
+            Se le puede agregar un header con “th”.
+            El contenido de la tabla se agrega con “td” dentro de las “tr”.
+            Para agrandar una columna se utiliza “rowspan” y para hacer lo mismo con las columnas se utiliza “colspan” y se elige cuántas columnas o filas ocupará de espacio. 
+            Igual se pueden utilizar thead, tbody, y tfoot para agregar header body y pie de página a la tabla.
+        </p>
+        <hr>
+        <strong>¿Cuáles son los principales controles de una forma HTML5?</strong>
+        <li>Casilla para seleccionar paleta de colores.</li>
+        <li>Casilla para seleccionar fecha y hora con formato.</li>
+        <li>Casilla para que el usuario rellene con formato de fecha y hora.</li>
+        <li>Casilla para rellenar con formato de correo electrónico, número entero, url. </li>
+        <li>Slider</li>
+        <li>Botón </li>
+        <hr>
+        <strong>¿Qué tanto soporte HTML5 tiene el navegador que utilizas? Puedes utilizar la siguiente página para descubrirlo: http://html5test.com/ (Al responder la pregunta recuerda poner el navegador que utilizas)
+        </strong>
+        <p>Mi navegador Chrome sacó 476 de 555 puntos de compatibilidad del estándar de html5.</p>
+        <hr>
+        <strong>Sobre el ciclo de vida y desarrollo de los sistemas de información:</strong>
+        <hr>
+        <strong>¿Cuál es el ciclo de vida de los sistemas de información?
+        </strong>
+        <p>Planificación, Diseño, desarrollo, pruebas, implementación, pruebas, mantenimiento, fin de la vida útil y migración a una actualización. 
+            Al final tiene que ver con un ciclo general que describe la concepción de los sistemas hasta cómo son tratados al terminar su vida útil.
+        </p>
+        <hr>
+        <strong>¿Cuál es el ciclo de desarrollo de sistemas de información?</strong>
+        <p>Hay distintos tipos de desarrollo. Hay iterativos, tradicionales como los de cascada, ágiles (para el análisis, desarrollo y pruebas de lo más importante). </p>
+        <hr>
+        <strong>Referencias: 
+        </strong>
+        <p>
+            <li>Diferenciador. (2020). Diferencia entre internet y web. Diferenciador. https://www.diferenciador.com/diferencia-entre-internet-y-web/</li>
+
+            <li>Garzon, C. R. (2022). HTTP Request Methods – Get vs Put vs Post Explained with Code Examples. freeCodeCamp.org. https://www.freecodecamp.org/news/http-request-methods-explained/
+            </li>
+            <li>Aviani, G. (2019). An introduction to HTTP: everything you need to know. freeCodeCamp.org. https://www.freecodecamp.org/news/http-and-everything-you-need-to-know-about-it/</li>
+            
+            <li>Códigos de estado de respuesta HTTP - HTTP | MDN. (2022, November 26). https://developer.mozilla.org/es/docs/Web/HTTP/Status</li>
+            
+            <li>Copes, F. (2022). The HTML Handbook – Learn HTML for Beginners. freeCodeCamp.org. https://www.freecodecamp.org/news/the-html-handbook/#tables</li>
+            
+            <li>Nice, B. (2018, September 24). Beginner’s HTML Cheat Sheet - Level Up! - Medium. Medium. https://medium.com/level-up-web/beginners-html-cheat-sheet-f9b1e3ce88a6</li>
+            
+            <li>Métodos. (n.d.). https://diego.com.es/metodos-http</li>
+            
+            <li>Deprecated HTML tags. (n.d.). https://www.w3docs.com/learn-html/deprecated-html-tags.html</li>
+            
+            <li>Controles de formulario originales - Aprende desarrollo web | MDN. (n.d.). https://developer.mozilla.org/es/docs/Learn/Forms/Basic_native_form_controls</li>
+
+            <li> Barron, B. (2021). HTML vs HTML5: Conoce las diferencias cruciales entre ellos. Kinsta®. https://kinsta.com/es/blog/html-vs-html5/#:~:text=Como%20ya%20se%20ha%20dicho,Java%20Web%20Start%20y%20Flash.</li>
+           
+        </p>
+        <hr>
+
+      
+
+
     
     </article>  
     <footer>VS CODE https://code.visualstudio.com/</footer>  
