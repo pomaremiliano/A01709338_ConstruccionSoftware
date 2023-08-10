@@ -1,0 +1,25 @@
+hr {
+    color: orange;
+    font-size-adjust: 24;
+
+}
+
+p {
+    outline-color: aqua;
+    font-size-adjust: 24;
+    font: arial;
+}
+
+.contacto {
+    text-emphasis: filled rgb(38, 0, 255);
+
+}
+
+
+#discos :hover{
+    color: purple;
+}
+
+#peliculas :hover{
+    color: orange;
+}
