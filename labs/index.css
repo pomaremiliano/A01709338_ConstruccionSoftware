@@ -1,14 +1,9 @@
-hr {
+p {
     color: orange;
     font-size-adjust: 24;
 
 }
 
-p {
-    outline-color: aqua;
-    font-size-adjust: 24;
-    font: arial;
-}
 
 .contacto {
     text-emphasis: filled rgb(38, 0, 255);
@@ -16,10 +11,18 @@ p {
 }
 
 
-#discos :hover{
-    color: purple;
+
+#Soundtracks:hover {
+    color: #B87333;
 }
 
-#peliculas :hover{
-    color: orange;
+
+#velvet:hover {
+    color: rgb(0, 0, 0);
 }
+
+#sabbath:hover {
+    color: rgba(63, 3, 94, 0.133);
+}
+
+
