@@ -83,3 +83,49 @@ Soundtracks.onclick = () => {
     despliega_rating();
 }
 
+//arreglos push trata el arreglo como pila y agrega el elemento al final del otro
+
+const arreglo = ["Elemento1"];
+
+arreglo.push("Elemento2");
+
+arreglo[10] = "Uno mas";
+
+// arreglos asociativos que permiten asociar pares de llaves variables
+
+arreglo["Once"] = "Otro mas";
+
+//podemos recorrer el arreglo usando ciclo for 
+
+for (let i = 0; i < arreglo.length; i++){
+    console.log(arreglo[i]);
+}
+
+// Pero tambien se puede recorrer de esta forma 
+
+
+for(let posicion in arreglo){//in regresa indices del arreglo
+    console.log(posicion);
+}   
+
+
+for(let valor of arreglo){ //guarda los valores 
+    console.log(valor); 
+
+}
+
+//objetos json: javascript object rotation: formato de arreglo de objetos 
+
+const objeto = {
+    atributo1: "valor1",
+    atributo2: "valor2",
+    atributo3: "valor3"
+}
+
+console.log(objeto);
+console.log(objeto.atributo1);
+
+function ejercicio1(){
+
+    
+}
