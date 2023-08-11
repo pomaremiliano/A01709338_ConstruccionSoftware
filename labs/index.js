@@ -49,3 +49,37 @@ function vamonos(){
 }
 
 vamonos();
+
+//funciones modernas 
+() => console.log("Funcion anonima, declaracion sin ejecucion");
+
+ 
+const funcion_anonima = () => { //una variable que guarde una funcion anonima, guarda la direccion de memoria como un apuntador
+    console.log("Funcion anonima, declaracion sin ejecucion");
+}
+
+//para ejecutarse
+funcion_anonima();
+
+//html dinamico 
+const Soundtracks = document.getElementById("Soundtracks");
+console.log(Soundtracks);
+
+const despliega_rating= () => {
+    const rating = "10/10";
+    Soundtracks.innerHTML = rating;
+    Soundtracks.onclick = despliega_nombre;
+    
+}
+
+const despliega_nombre= () => {
+    const nombre = "Soundtracks for the blind";
+    Soundtracks.innerHTML = nombre;
+    Soundtracks.onclick = despliega_rating;
+}
+
+Soundtracks.onclick = () => {
+    console.log("Swans");
+    despliega_rating();
+}
+

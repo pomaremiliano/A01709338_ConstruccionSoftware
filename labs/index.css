@@ -25,4 +25,19 @@ p {
     color: rgba(113, 9, 165, 0.877);
 }
 
+#siamesed:hover {
+    color: orange;
+}
+
+#HR:hover {
+    color: pink
+}
+
+#doublen:hover {
+    color: greenyellow;
+}
+
+#bm:hover {
+    color: red;
+}
 
