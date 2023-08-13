@@ -125,7 +125,25 @@ const objeto = {
 console.log(objeto);
 console.log(objeto.atributo1);
 
-function ejercicio1(){
 
+
+
+
+function ejercicio1() {
+    const numero = parseInt(prompt("Ingresa un numero:"));
     
+ 
+    for(let i = 1; i < numero; i++){
+        tablan += i,i**2,i**3;
+
+    }
+   tabla = console.log(tablan);
+ 
+
+    document.getElementById("ejercicio1").innerHTML = "Ejercicio 1 resultados: ", tabla;
 }
+
+function ejercicio2(){
+    const numero = prompt("");
+}
+ejercicio1();
