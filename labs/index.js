@@ -128,28 +128,114 @@ console.log(objeto.atributo1);
 
 
 
-
-/*function ejercicio1() {
-    const numero = parseInt(prompt("Ingresa un numero:"));
+// Lab 4: Ejercicio 1
+function cuadrados_cubos() {
+    const numero = parseInt(prompt("Ingresa un numero: "));
     
- 
+    let lista_numeros = "<ul>";
     for(let i = 1; i < numero; i++){
-        let tablan = i;
+        lista_numeros += `<li> -->${i}, cuadrado: ${i ** 2}, Cubo: ${i ** 3}</li>`;
 
     }
-   tabla = console.log(tablan);
+   lista_numeros += "</ul>";
  
 
-    document.getElementById("ejercicio1").innerHTML = "Ejercicio 1 resultados: ", tabla;
+    document.getElementById("ejercicio1").innerHTML = lista_numeros;
 }
 
-function ejercicio2(){
-    const numero = prompt("");
+cuadrados_cubos();
+
+// Lab 4: Ejercicio 2
+
+function valida_suma() {
+    const respuesta = parseInt(prompt("Ingresa tu respuesta: "));
+    const t_inicial = new Date();
+    const aleatorio1= Math.floor(Math.random()* 255);
+    const aleatorio2= Math.floor(Math.random() * 255);
+    const suma_aleatoria= aleatorio1 + aleatorio2;
+    if (respuesta == suma_aleatoria) {
+        document.getElementById("ejercicio2").textContent = "¡Correcto!";
+    } else {
+        document.getElementById("ejercicio2").textContent = `¡Incorrecto! La respuesta correcta es --> ${suma_aleatoria}`;
+    }
+
+
+    document.getElementById("ejercicio2.1").textContent = `Tiempo:  ${new Date() - t_inicial} ms`;
+    
 }
-ejercicio1();
-*/
+
+valida_suma();
+
+//Lab 4: Ejercicio 3
+function contador_negativos(arreglo) {
+   // contador numeros negativos
+   let negativo = 0;
+   arreglo.forEach(num => {
+    if (num < 0) negativo++;
+   });
+   document.getElementById("ejercicio3.1").textContent = `Numeros negativos: ${negativo}`;
+}
+
+function contador_ceros(arreglo) {
+    // contador ceros (0)
+    let cero = 0;
+    arreglo.forEach(num => {
+    if (num == 0) cero++;
+    });
+    document.getElementById("ejercicio3.2").textContent = `Ceros: ${cero}`;
+}
+
+function contador_mayores(arreglo) {
+   // contador valores mayores a 0 
+   let mayores = 0;
+   arreglo.forEach(num => {
+    if (num > 0) mayores++;
+   });
+   document.getElementById("ejercicio3.3").textContent = `Mayores: ${mayores}`;
+}
+
+// para declarar el arreglo y ejecutar cada funcion 
+let arreglo1 = [-1,80,-154,2,3,0,0]; 
+contador_negativos(arreglo1);
+contador_ceros(arreglo1);
+contador_mayores(arreglo1);
 
 
+// Lab 4: Ejercicio 4
+function promedios(arreglo) {
+    let arreglo_promedios=[];
+
+    for (let i=0; i<arreglo.length; i++) {
+        const renglon = arreglo[i];
+        const suma = renglon.reduce((total, num) => total + num, 0); // reduce recorre el renglon va sumando el total y suma para luego ser dividido (para el promedio). El 0 es el valor inicial que pide la funcion reduce.
+        const promedio = suma / renglon.length;
+        arreglo_promedios.push(promedio);
+    }
+    document.getElementById("ejercicio4").textContent = `Promedios: ${arreglo_promedios}`;
+}
+
+let matriz1 = [
+    [6, 4, 2, 1, 7],
+    [2, 1, 3, 4, 6],
+    [5, 4, 3, 2, 1],
+    [6, 3, 0, 4, 5],
+    [3, 2, 1, 3, 2]
+];
+
+promedios(matriz1);
+
+//Lab 4: Ejercicio 5
+function inverso() {
+    const numero = prompt("Ingresa un numero para invertir: ");
+    const ninverso = numero.split('').reverse().join('');
+    document.getElementById("ejercicio5").textContent = `Numero Inverso: ${ninverso}`;
+}
+inverso();
+
+//Lab 4: Ejercicio 6
+
+
+//Lab 6 ----------------
 //cambia de color el texto en el input
 document.getElementById("pelicula").onkeyup = () => {
     const red = Math.floor(Math.random() * 255);
