@@ -233,7 +233,50 @@ function inverso() {
 inverso();
 
 //Lab 4: Ejercicio 6
+const album = [
+    {track1: 7.4},
+    {track2: 4.47},
+    {track3: 5.58},
+    {track4: 4.36},
+    {track5: 5.29},
+    {track6: 2.52},
+    {track7: 7.43},
+    {track8: 3.56},
+    {track9: 4.26},
+    {track10: 7.38},
+    {track11: 5.37},
+    {track12: 3.27},
+    {track13: 2.34}
+];
 
+
+function duracion_album() {
+    let suma = 0;
+    for (const track of album) {
+        const duracion_track=Object.values(track)[0];
+        suma += duracion_track; 
+    }
+
+    const duracion = suma / 60;
+    document.getElementById("ejercicio6").textContent = `Duración Álbum:  ${duracion.toFixed(2)} hrs`;
+
+}
+
+function prom_album() {
+    let suma = 0;
+    for (const track of album) {
+        const duracion_track=Object.values(track)[0];
+        suma += duracion_track; 
+    }
+
+    const duracion = suma / 60;
+    promedios = duracion/album.length;
+    document.getElementById("ejercicio6.1").textContent = `promedio Álbum:  ${promedios} hrs`;
+
+}
+
+duracion_album();
+prom_album();
 
 //Lab 6 ----------------
 //cambia de color el texto en el input
