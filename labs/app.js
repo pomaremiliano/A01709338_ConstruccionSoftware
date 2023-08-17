@@ -9,3 +9,12 @@ filesystem.writeFileSync('hola.txt','Hola desde node'); // escribir de forma sin
 
 console.log("Ya acabe de escribir");
 
+setTimeout(()=>{console.error("h")},11000); // se ejecuta hasta los 11 segundos (milisegundos)
+
+// funcion asincrona de manera ordenada
+const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
+for (let item of arreglo) {
+    setTimeout(() => {
+        console.log(item);
+    }, item);
+}
