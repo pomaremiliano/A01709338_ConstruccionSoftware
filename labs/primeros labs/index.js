@@ -280,6 +280,7 @@ duracion_album();
 prom_album();
 
 //Lab 6 ----------------
+//Lab 6 
 //cambia de color el texto en el input
 document.getElementById("pelicula").onkeyup = () => {
     const red = Math.floor(Math.random() * 255);
