@@ -148,7 +148,7 @@ cuadrados_cubos();
 // Lab 4: Ejercicio 2
 
 function valida_suma() {
-    const respuesta = parseInt(prompt("Ingresa tu respuesta: "));
+    const respuesta = prompt("Ingresa tu respuesta: ");
     const t_inicial = new Date();
     const aleatorio1= Math.floor(Math.random()* 255);
     const aleatorio2= Math.floor(Math.random() * 255);
@@ -167,6 +167,7 @@ function valida_suma() {
 valida_suma();
 
 //Lab 4: Ejercicio 3
+// Calcular cantidad de números negativos de un array en una función de JS. (n.d.). Stack Overflow En Español. https://es.stackoverflow.com/questions/484717/calcular-cantidad-de-n%C3%BAmeros-negativos-de-un-array-en-una-funci%C3%B3n-de-js
 function contador_negativos(arreglo) {
    // contador numeros negativos
    let negativo = 0;
