@@ -281,8 +281,110 @@ prom_album();
 
 //Lab 6 ----------------
 //Lab 6 
+document.getElementById("boton_papas").onclick = () => {
+    const precio = 30;
+    const iva = precio * 1.16;
+    document.getElementById("boton_papas").textContent = `Precio unitario= $ ${precio}.`;
+    document.getElementById("precio_papas").textContent = `Precio con IVA: $ ${iva}.`;
+}
+
+document.getElementById("boton_refresco").onclick= () => {
+    const precio = 16;
+    const iva = precio * 1.16;
+    document.getElementById("boton_refresco").textContent = `Precio unitario= $ ${precio}.`;
+    document.getElementById("precio_refrescos").textContent = `Precio con IVA: $ ${iva}.`;
+}
+
+const papas = [
+    {
+        nombre: "Sabritas Adobadas",
+        imagen: "https://supermode.com.mx/cdn/shop/products/PAPASABRITASADOBADAS64GR.jpg?v=1623178426"
+    },
+    {
+        nombre: "Takis Fuego",
+        imagen: "https://m.media-amazon.com/images/I/61OdAGzkCZL._AC_UF894,1000_QL80_.jpg"
+    },
+];
+
+const refrescos = [
+    {
+        nombre: "Coca-Cola 600ml",
+        imagen: "https://panoli.mx/cdn/shop/products/RE0015_761x.jpg?v=1600970250"
+    },
+    {
+        nombre: "Dr Pepper 600ml",
+        imagen: "https://gbrisabebidas.com/wp-content/uploads/2020/11/10000151.jpg"
+    },
+];
+function crea_papas() {
+    let html = `<div class="columns">`;
+    for(let papa of papas) {
+        html += 
+        `<div class="column">
+        <div class="card">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <img src="${papa.imagen}" alt="${papa.nombre}">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-left">
+                <figure class="image is-48x48">
+                    <img src="${papa.imagen}" alt="${papa.nombre}">
+                </figure>
+                </div>
+                <div class="media-content">
+                <p class="title is-4">${papa.nombre}</p>
+                </div>
+            </div>
+        
+
+        </div>
+    </div>
+</div>`;
+    }
+    html += `</div>`;
+    document.getElementById("papas").innerHTML = html;
+}
+crea_papas();
+
+function crea_refrescos() {
+    let html = `<div class="columns">`;
+    for(let refresco of refrescos) {
+        html += 
+        `<div class="column">
+        <div class="card">
+        <div class="card-image">
+            <figure class="image is-4by3">
+                <img src="${refresco.imagen}" alt="${refresco.nombre}">
+            </figure>
+        </div>
+        <div class="card-content">
+            <div class="media">
+                <div class="media-left">
+                <figure class="image is-48x48">
+                    <img src="${refresco.imagen}" alt="${refresco.nombre}">
+                </figure>
+                </div>
+                <div class="media-content">
+                <p class="title is-4">${refresco.nombre}</p>
+                </div>
+            </div>
+        
+
+        </div>
+    </div>
+</div>`;
+    }
+    html += `</div>`;
+    document.getElementById("refrescos").innerHTML = html;
+}
+crea_refrescos();
+
+//Ejemplos clase lab 6
 //cambia de color el texto en el input
-document.getElementById("pelicula").onkeyup = () => {
+/*document.getElementById("pelicula").onkeyup = () => {
     const red = Math.floor(Math.random() * 255);
     const green = Math.floor(Math.random() * 255);
     const blue = Math.floor(Math.random() * 255);
@@ -347,3 +449,4 @@ function genera_posters() {
     document.getElementById("posters").innerHTML = html;
 }
 genera_posters();
+*/
