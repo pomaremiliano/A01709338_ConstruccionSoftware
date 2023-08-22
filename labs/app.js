@@ -93,6 +93,8 @@ const server = http.createServer((request, response) => {
     </body>
     </html>
 `) // se envia contenido a html
+    response.statusCode = 404;
+    response.write
     response.end(); //end envia la respuesta ya que esta lista 
 
 });
