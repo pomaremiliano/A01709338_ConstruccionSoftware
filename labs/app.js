@@ -26,9 +26,10 @@ const http = require('http'); // contiene funciones para recibir peticiones y ma
 // Createserver: recibe prototipo request y response. Request es un objeto 
 const server = http.createServer((request, response) => { 
     console.log(request.url);
-    response.setHeader('Content-Type','text/html'); // formato html
-    response.write(`
-        <!DOCTYPE html>
+    if (request.url == "/") {
+        response.setHeader('Content-Type', 'text/html');
+        response.write(`
+    <!DOCTYPE html>
     <html>
     <head>
         <title>
@@ -92,10 +93,90 @@ const server = http.createServer((request, response) => {
         </div>
     </body>
     </html>
-`) // se envia contenido a html
+`);
+
+    response.end();
+} else if(request.url == "/new") {
+    response.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>
+            Labs A01709338 
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://bulma.io">
+                        <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+                    </a>
+                
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="section">
+                <div class="container">
+                    <h1 class="title">Registro de discos</h1>
+                </div>
+            </section>
+        </main>
+    </body>
+    </html>`);
+
+    response.end();
+} else {
     response.statusCode = 404;
-    response.write
-    response.end(); //end envia la respuesta ya que esta lista 
+    response.write(`    
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>
+            Labs A01709338 
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    <body>
+        <header>
+            <nav class="navbar" role="navigation" aria-label="main navigation">
+                <div class="navbar-brand">
+                    <a class="navbar-item" href="https://bulma.io">
+                        <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+                    </a>
+                
+                    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section class="section">
+                <div class="container">
+                    <h1 class="title">Tu disco no se encontró :( </h1>
+                </div>
+            </section>
+        </main>
+    </body>
+    </html>
+    `);
+
+    response.end();
+}
 
 });
 
