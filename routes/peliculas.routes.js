@@ -1,9 +1,10 @@
 const express = require('express');
 
+
 const router = express.Router();
 
-router.get('/peliculas', (request, response, next) => {
-    response.send('Respuesta de la ruta "/peliculas/ruta"'); 
+router.get('/new', (request, response, next) => {
+    response.sendFile(path.join(__dirname, '..', 'views', 'new.html'));
 });
 
 module.exports = router;
