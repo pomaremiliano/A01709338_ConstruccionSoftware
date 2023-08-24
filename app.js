@@ -89,4 +89,9 @@ app.use((request, response, next) => {
     response.send('¡Hola mundo!'); //Manda la respuesta
 });
 
+
+const rutasPeliculas = require('./routes/peliculas.routes');
+
+app.use('/peliculas', rutasPeliculas);
+
 app.listen(3000);
