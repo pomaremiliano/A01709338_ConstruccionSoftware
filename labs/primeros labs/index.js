@@ -226,7 +226,7 @@ let matriz1 = [
 promedios(matriz1);
 
 //Lab 4: Ejercicio 5
-function inverso() {
+/*function inverso() {
     const numero = prompt("Ingresa un numero para invertir: ");
     const ninverso = numero.split('').reverse().join('');
     document.getElementById("ejercicio5").textContent = `Numero Inverso: ${ninverso}`;
@@ -278,14 +278,33 @@ function prom_album() {
 
 duracion_album();
 prom_album();
-
+*/
 //Lab 6 ----------------
 //Lab 6 
+
+let seleccion1 = 0;
+
+boton_seleccionar1= document.getElementById("boton_seleccion1");
+boton_seleccionar1.onclick= () => {
+    seleccion1 ++;
+    boton_seleccionar1.textContent=`Agregar producto (${seleccion1})`;
+}
+
 document.getElementById("boton_papas").onclick = () => {
+    
     const precio = 30;
     const iva = precio * 1.16;
     document.getElementById("boton_papas").textContent = `Precio unitario= $ ${precio}.`;
     document.getElementById("precio_papas").textContent = `Precio con IVA: $ ${iva}.`;
+    
+    
+    
+}
+let seleccion2 = 0;
+boton_seleccionar2= document.getElementById("boton_seleccion2");
+boton_seleccionar2.onclick= () => {
+    seleccion2 ++;
+    boton_seleccionar2.textContent=`Agregar producto (${seleccion2})`;
 }
 
 document.getElementById("boton_refresco").onclick= () => {
@@ -294,6 +313,7 @@ document.getElementById("boton_refresco").onclick= () => {
     document.getElementById("boton_refresco").textContent = `Precio unitario= $ ${precio}.`;
     document.getElementById("precio_refrescos").textContent = `Precio con IVA: $ ${iva}.`;
 }
+
 
 const papas = [
     {
@@ -316,6 +336,8 @@ const refrescos = [
         imagen: "https://gbrisabebidas.com/wp-content/uploads/2020/11/10000151.jpg"
     },
 ];
+
+
 function crea_papas() {
     let html = `<div class="columns">`;
     for(let papa of papas) {
