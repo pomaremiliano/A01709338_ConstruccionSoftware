@@ -26,6 +26,7 @@ const http = require('http'); // contiene funciones para recibir peticiones y ma
 // Createserver: recibe prototipo request y response. Request es un objeto 
 const server = http.createServer((request, response) => { 
     console.log(request.url);
+    console.log(request.method);
     if (request.url == "/") {
         response.setHeader('Content-Type', 'text/html');
         response.write(`
@@ -96,7 +97,8 @@ const server = http.createServer((request, response) => {
 `);
 
     response.end();
-} else if(request.url == "/new") {
+
+} else if(request.url == "/new" && request.method == "GET") {
     response.write(`
     <!DOCTYPE html>
     <html>
@@ -113,7 +115,7 @@ const server = http.createServer((request, response) => {
             <nav class="navbar" role="navigation" aria-label="main navigation">
                 <div class="navbar-brand">
                     <a class="navbar-item" href="https://bulma.io">
-                        <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: Free, open source, and modern CSS framework based on Flexbox" width="112" height="28">
+                        <img src="https://images.vexels.com/media/users/3/161230/isolated/preview/1fa58bd038c77c9d668475b9f05126a5-ilustracion-de-banda-de-disco-de-vinilo.png" alt="disco" width="112" height="112">
                     </a>
                 
                     <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -128,6 +130,15 @@ const server = http.createServer((request, response) => {
             <section class="section">
                 <div class="container">
                     <h1 class="title">Registro de discos</h1>
+                    <form action="/new" method="POST">
+                    <label for="nombre">Nombre del disco</label>
+                    <input id="nombre" name="nombre" class="input" type="text" placeholder="Album">
+                    <br><br>
+                    <label for="artista">Artista</label>
+                    <input id="artista" name="artista" class="input" type="text" placeholder="Artista">
+                    <br>
+                    <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
+                </form>
                 </div>
             </section>
         </main>
@@ -135,6 +146,12 @@ const server = http.createServer((request, response) => {
     </html>`);
 
     response.end();
+
+} else if(request.url == "/new" && request.method == "POST") { 
+        
+    response.write(`La pelicula fue registrada`);
+    response.end();
+
 } else {
     response.statusCode = 404;
     response.write(`    
