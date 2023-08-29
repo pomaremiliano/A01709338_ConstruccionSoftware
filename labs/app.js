@@ -98,7 +98,7 @@ const server = http.createServer((request, response) => {
 
     response.end();
 
-} else if(request.url == "/new" && request.method == "GET") {
+} else if(request.url == "/registrar" && request.method == "GET") {
     response.write(`
     <!DOCTYPE html>
     <html>
@@ -148,8 +148,81 @@ const server = http.createServer((request, response) => {
     response.end();
 
 } else if(request.url == "/new" && request.method == "POST") { 
-        
-    response.write(`La pelicula fue registrada`);
+    
+    const datos = [];
+    request.on('data', (dato) => {
+        // console.log(dato);
+        datos.push(dato);
+    });
+    return request.on('end', () => {
+        const datos_completos = Buffer.concat(datos).toString();
+        console.log(datos_completos);
+        const primera_variable = datos_completos.split('&')[0];
+        console.log(primera_variable);
+        const primer_valor = primera_variable.split('=')[1];
+        console.log(primer_valor);
+        const album = datos_completos.split('&')[1].split('=')[1];
+        console.log(album); 
+        response.write(`El disco fue registrado.`);
+        const filesystem = require('fs');
+        filesystem.writeFile('datos.txt', datos_completos, { flag: 'a+' }, err => {
+            if (err) {
+              console.error(err);
+            }
+          });
+        return response.end();
+    });
+
+} else if(request.url == "/tienda" && request.method == "GET") {
+    response.write(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>
+            Labs A01709338 
+        </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="box">
+                <h1 class="title is-1-desktop">Labs Tc2005b</h1>
+                <h2 class="subtitle is-1-desktop">Jorge Emiliano Pomar A01709338</h2>
+            </div>
+        </header>
+        <section class="section">
+            <div class="container">
+                <p>
+                    <label for="pelicula">Pelicula favorita: </label>
+                    <input id ="pelicula" class="input is-primary" type="text" placeholder="Primary input">
+                </p>
+                <div class = "box">
+                    <h1 class="title is-1-desktop">Lab6: Tienda</h1>
+                    <br>
+                    <div id="papas"></div>
+                    <hr>
+                    <button id="boton_papas" class="button is-danger is-rounded">Precio</button>
+                    <hr>
+                    <button id="boton_seleccion1" class="button is-danger is-rounded">Seleccionar papas</button>
+                    <hr>
+                    <box id="precio_papas">...</box>
+                    <hr>
+                    <div id="refrescos"></div>
+                    <hr>
+                    <button id="boton_refresco" class="button is-danger is-rounded">Precio</button>
+                    <hr>
+                    <box id="precio_refrescos">...</box> 
+                    <hr>
+                    <button id="boton_seleccion2" class="button is-danger is-rounded">Seleccionar refrescos</button>
+                    <hr>
+                </div>
+            </div>
+        </section>
+    </body>
+    </html>
+    `);
     response.end();
 
 } else {
