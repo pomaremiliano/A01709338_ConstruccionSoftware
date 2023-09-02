@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+app.use(bodyParser.urlencoded({extended: false}));
 
 //Middleware
 app.use((request, response, next) => {
@@ -9,25 +10,17 @@ app.use((request, response, next) => {
     next(); //Le permite a la petición avanzar hacia el siguiente middleware
 });
 
-app.use(bodyParser.urlencoded({extended: false}));
+const rutasLabs = require('./routes/lab11.routes');
 
-router.get('/new',(request,response,next)=> {
-    response.sendFile(path.join(__dirname, '..', 'views', 'new.html'));
-});
-
-app.post('/new',(request,response,next)=>{
-    console.log(request.body);
-    response.redirect('/');
-});
+app.use('/labs', rutasLabs);
+app.use('/tienda', rutasLabs);
+app.use('/peliculas', rutasLabs);
+app.use('/nuevodisco', rutasLabs);
 
 app.use((request, response, next) => {
     console.log('Otro middleware!');
-    response.send('¡Hola mundo!'); //Manda la respuesta
+    response.statusCode = 404;
+    response.send('La página no se encontró.'); //Manda la respuesta
 });
-
-
-const rutasPeliculas = require('./routes/peliculas.routes');
-
-app.use('/peliculas', rutasPeliculas);
 
 app.listen(3000);
