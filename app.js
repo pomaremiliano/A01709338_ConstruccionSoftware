@@ -11,6 +11,18 @@ Así que es muy útil para gestionar los proyectos de npm.
 
 */
 
+/*
+Pregunta Lab 12 HTML dinámico:
+
+Q: ¿Qué otros templating engines existen para node?
+
+A: Pug, Haml, hbs, Squirrelly, Eta, combyne, Nunjucks, marko, whiskers, Blade, rivets-server, Liquidjs, twing, sprightly
+html-express-js. 
+
+Template engines. (n.d.). https://expressjs.com/en/resources/template-engines.html
+
+*/
+
 
 
 
