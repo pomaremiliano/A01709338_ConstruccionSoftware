@@ -1,3 +1,19 @@
+/*
+Pregunta Lab 11 Express:
+
+El archivo package.json tiene información útil del proyecto de npm.
+Puedes incluír documentación como el nombre del proyecto, archivos, versión. Al igual que
+puedes incluír la información del repositorio
+en el que se almacena el proyecto. 
+Incluye metadatos como el nombre, la versión y las dependencias. Que esta última es 
+información necesaria para las bibliotecas que se instalan con npm-install.
+Así que es muy útil para gestionar los proyectos de npm.
+
+*/
+
+
+
+
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
