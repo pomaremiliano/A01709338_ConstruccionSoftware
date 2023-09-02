@@ -32,22 +32,23 @@ let discos = [
     },    
 ];
 
-router.get('/nuevodisco', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'nuevodisco.html'));
-});
 
 router.get('/primeroslabs', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'primeroslabs.html'));
+    
+    response.render('labs_list/list.ejs');
 });
 
-
 router.get('/tienda', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'tienda.html'));
+    response.render('labs_list/tienda.ejs');
 });
 
 
 router.get('/peliculas', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'peliculas.html'));
+    response.render('labs_list/peliculas.ejs');
+});
+
+router.get('/nuevodisco', (request, response, next) => {
+    response.render('labs_list/nuevodisco.ejs');
 });
 
 router.post('/labs', (request, response, next) => {

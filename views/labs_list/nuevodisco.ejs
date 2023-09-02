@@ -1,0 +1,23 @@
+<%- include('../includes/labs.head.ejs') %>
+
+<body>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="title">Registro de discos</h1>
+                <form action="/labs" method="POST">
+                <label for="nombre">Nombre del disco</label>
+                <input id="nombre" name="nombre" class="input" type="text" placeholder="Album">
+                <br><br>
+                <label for="artista">Artista</label>
+                <input id="artista" name="artista" class="input" type="text" placeholder="Artista">
+                <br>
+                <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
+            </form>
+            </div>
+        </section>
+    </main>
+
+
+<%- include('../includes/labs.foot.ejs') %>

@@ -1,66 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
-        Tienda Labs A01709338 
-    </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
 
-<body>
-    <section class="section">
-        <div class="container is-fullhd">
-            <h1 class="title is-1-desktop">Tienda</h1>
-            <div class = "box">
-                
-                <br>
-                <h1 class="title is-2-desktop">Papas</h1>
-                <div id="papas"></div>
-                <div class="card">
-                    <figure class = "image is-128x128">
-                            <img src="https://supermode.com.mx/cdn/shop/products/PAPASABRITASADOBADAS64GR.jpg?v=1623178426" alt="papas adobadas">
-                    </div>
-                </div>
-                <div class="card">
-                    <figure class = "image is-128x128">
-                            <img src="https://m.media-amazon.com/images/I/61OdAGzkCZL._AC_UF894,1000_QL80_.jpg" alt="takisfuego">
-                    </div>
-                </div>
-                <hr>
-                <button id="boton_papas" class="button is-dark is-focused">Precio</button>
-                <hr>
-                <box id="precio_papas"></box>
-                <hr>
-                <h1 class="title is-2-desktop">Refrescos</h1>
-                <div id="refrescos"></div>
-                <hr>
-                <div class="card">
-                    <figure class = "image is-128x128">
-                            <img src="https://panoli.mx/cdn/shop/products/RE0015_761x.jpg?v=1600970250" alt="coca">
-                    </div>
-                </div>
-                <div class="card">
-                    <figure class = "image is-128x128">
-                            <img src="https://gbrisabebidas.com/wp-content/uploads/2020/11/10000151.jpg" alt="drpepper">
-                    </div>
-                </div>
-                
-                <button id="boton_refresco" class="button is-dark is-focused">Precio</button>
-                <hr>
-                <box id="precio_refrescos"></box> 
-                <hr>
-            </div>
-        </div>
-    </section>
-    <script src="lab11.routes.js"></script>
-</body>
-<footer class="footer" >
-    <div class="content has-text-centered">
-      <p>
-        <a href="https://code.visualstudio.com/">VSCODE</a>
-      </p>
-    </div>
-</footer>
-</html>
+router.get("/", (request, response, next) => {
+    response.render('labs_list/tienda.ejs', {
+    });
+    
+    });
+    module.exports = router;

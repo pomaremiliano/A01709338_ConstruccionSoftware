@@ -1,44 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>
-        Disco Nuevo
-    </title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-        <a class="navbar-item">
-            <img src="https://images.vexels.com/media/users/3/161230/isolated/preview/1fa58bd038c77c9d668475b9f05126a5-ilustracion-de-banda-de-disco-de-vinilo.png" width="80" height="112">
-        </a>
-        <p class="title is-4-strong"> Disco Nuevo</p>
-    </header>
-    <main>
-        <section class="section">
-            <div class="container">
-                <h1 class="title">Registro de discos</h1>
-                <form action="/labs" method="POST">
-                <label for="nombre">Nombre del disco</label>
-                <input id="nombre" name="nombre" class="input" type="text" placeholder="Album">
-                <br><br>
-                <label for="artista">Artista</label>
-                <input id="artista" name="artista" class="input" type="text" placeholder="Artista">
-                <br>
-                <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
-            </form>
-            </div>
-        </section>
-    </main>
-</body>
-<footer class="footer" >
-    <div class="content has-text-centered">
-      <p>
-        <a href="https://code.visualstudio.com/">VSCODE</a>
-      </p>
-    </div>
-</footer>
-</html>
+
+router.get("/", (request, response, next) => {
+    response.render('labs_list/nuevodisco.ejs', {
+        disco: disco
+    });
+    
+    });
+    module.exports = router;
