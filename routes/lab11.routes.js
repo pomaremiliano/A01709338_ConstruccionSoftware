@@ -1,6 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+
+const tiendaController = require('../controllers/tienda.controller');
+
 let discos = [
     {
         nombre: "Soundtracks for the blind (1995)- swans",
@@ -32,6 +35,7 @@ let discos = [
     },    
 ];
 
+router.get('/tienda', tiendaController.get_add);
 
 router.get('/primeroslabs', (request, response, next) => {
     

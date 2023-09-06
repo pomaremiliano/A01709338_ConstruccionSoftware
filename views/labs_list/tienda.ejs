@@ -6,14 +6,18 @@
             <div class = "box">
                 <h1 class="title is-1-desktop">Lab6: Tienda</h1>
                 <br>
-                <div id="papas"></div>
-                <hr>
-                <button id="boton_papas" class="button is-danger is-rounded">Precio</button>
-                <hr>
-                <button id="boton_seleccion1" class="button is-danger is-rounded">Seleccionar papas</button>
-                <hr>
-                <box id="precio_papas">...</box>
-                <hr>
+                <div id="productos"></div>
+                <% for (let papas of Producto) { %>
+                    <div class="product-card">
+                        <img src="<%= papas.imagen %>" alt="<%= papas.nombre %>">
+                    </div>
+                    <button id="boton_papas" class="button is-danger is-rounded">Precio</button>
+                    <hr>
+                    <button id="boton_seleccion1" class="button is-danger is-rounded">Seleccionar papas</button>
+                    <hr>
+                    <box id="precio_papas">...</box>
+                    <hr>
+                <% } %>
                 <div id="refrescos"></div>
                 <hr>
                 <button id="boton_refresco" class="button is-danger is-rounded">Precio</button>
