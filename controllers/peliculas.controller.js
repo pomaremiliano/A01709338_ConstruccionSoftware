@@ -1,4 +1,3 @@
-const model = require('../models/peliculas.model');
 const Peliculas= require('../models/peliculas.model');
 
 

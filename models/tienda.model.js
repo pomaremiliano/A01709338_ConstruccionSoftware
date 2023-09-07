@@ -15,6 +15,22 @@ let productos = [
         nombre: "Dr Pepper 600ml",
         imagen: "https://gbrisabebidas.com/wp-content/uploads/2020/11/10000151.jpg"
     },
+    {
+        nombre: "Pepsi 600ml",
+        imagen: "https://supermode.com.mx/cdn/shop/products/0750103131001L.jpg?v=1616004597"
+    },
+    {
+        nombre: "Sprite 600ml",
+        imagen: "https://panoli.mx/cdn/shop/products/12959_2_1000x.jpg?v=1617824909"
+    },
+    {
+        nombre: "Fanta 600ml",
+        imagen: "https://chedrauimx.vtexassets.com/arquivos/ids/18248425/7501055303779_00.jpg?v=638288814374530000"
+    },
+    {
+        nombre: "Coca-Cola Sin Azúcar 600ml",
+        imagen: "https://supermeat.mx/cdn/shop/products/39047040a11831e1d322d0cb54325a6e.jpg?v=1681238999"
+    }
 ];
 
 
@@ -30,4 +46,6 @@ module.exports = class Productos {
         return productos;
     }
 }
+
+
 

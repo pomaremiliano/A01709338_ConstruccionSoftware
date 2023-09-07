@@ -1,4 +1,3 @@
-const model = require('../models/discos.model');
 const Discos= require('../models/discos.model');
 
 
