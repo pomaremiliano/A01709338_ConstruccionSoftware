@@ -1,0 +1,30 @@
+<%- include('../includes/labs.head.ejs') %>
+
+<body class="dark-background">
+
+        <a class="icon is-large">
+            <img src="https://images.vexels.com/media/users/3/161230/isolated/preview/1fa58bd038c77c9d668475b9f05126a5-ilustracion-de-banda-de-disco-de-vinilo.png" width="80" height="112">
+        </a>
+        <p class="title is-4"> Mis Discos Favoritos</p>
+
+    <% for(let disco of discos) { %>
+            <div class="column">
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                                <div class="media-left">
+                                    <figure class="image is-128x128">
+                                        <img src="<%= disco.imagen%>" alt="<%= disco.nombre%>">
+                                    </figure>
+                                </div>
+                            <div class="media-content">
+                                <p class="title is-4"><%= disco.nombre%></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <% } %>
+</body>
+
+<%- include('../includes/labs.foot.ejs') %>

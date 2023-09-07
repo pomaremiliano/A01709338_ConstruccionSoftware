@@ -1,35 +1,27 @@
 <%- include('../includes/labs.head.ejs') %>
-<body>
-    <section class="section">
-        <div class="container is-fullhd">
-            <h1 class="title is-1-desktop">Tienda</h1>
-            <div class = "box">
-                <h1 class="title is-1-desktop">Lab6: Tienda</h1>
-                <br>
-                <div id="productos"></div>
-                <% for (let papas of Producto) { %>
-                    <div class="product-card">
-                        <img src="<%= papas.imagen %>" alt="<%= papas.nombre %>">
-                    </div>
-                    <button id="boton_papas" class="button is-danger is-rounded">Precio</button>
-                    <hr>
-                    <button id="boton_seleccion1" class="button is-danger is-rounded">Seleccionar papas</button>
-                    <hr>
-                    <box id="precio_papas">...</box>
-                    <hr>
+<body class="dark-background">
+    <div class="container is-fullhd">
+        <p class="title is-5-desktop">Tienda</p>
+        <div class="card">
+            <div class="card-content">
+                <% if (productos.length > 0) { %>
+                    <% for (let producto of productos) { %>
+                        <div class="media">
+                            <figure class="media-left">
+                                <p class="image is-48x48">
+                                    <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+                                </p>
+                            </figure>
+                            <div class="media-content">
+                                <button id="boton_producto<%= producto.id %>" class="button is-dark">Precio</button>
+                                <button id="boton_seleccion<%= producto.id %>" class="button is-dark">Seleccionar producto</button>
+                                <figure class="card are-small" id="precio_producto<%= producto.id %>">...</figure>
+                            </div>
+                        </div>
+                    <% } %>
                 <% } %>
-                <div id="refrescos"></div>
-                <hr>
-                <button id="boton_refresco" class="button is-danger is-rounded">Precio</button>
-                <hr>
-                <box id="precio_refrescos">...</box> 
-                <hr>
-                <button id="boton_seleccion2" class="button is-danger is-rounded">Seleccionar refrescos</button>
-                <hr>
             </div>
         </div>
-    </section>
-    
+    </div>
 </body>
 <%- include('../includes/labs.foot.ejs') %>
-</html>

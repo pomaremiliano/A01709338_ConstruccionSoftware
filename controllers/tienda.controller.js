@@ -1,25 +1,27 @@
 const model = require('../models/tienda.model');
-const Producto = require('../models/tienda.model');
+const Productos= require('../models/tienda.model');
+
 
 exports.get_add = (request, response, next) => {
 
     response.render('labs_list/tienda.ejs');
 };
 exports.post_add = (request, response, next) => {
-    const productos = new Producto({
+    const producto = new Productos({
         nombre: request.body.nombre,
         imagen: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Oxxo_vac%C3%ADo.jpg",
     });
-    productos.save();
-    response.redirect('/tienda');
+    producto.save();
+    response.redirect('tienda');
 }
+
 
 exports.get_list = (request, response, next) => {
     response.render('labs_list/tienda.ejs', {
-        papas: Producto.fetchAll()
-
+        productos: Productos.fetchAll()
     });
 }
+
 
 /*
 let seleccion1 = 0;
