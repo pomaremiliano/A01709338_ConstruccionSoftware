@@ -1,3 +1,4 @@
+
 let productos = [
     {
         nombre: "Sabritas Adobadas",

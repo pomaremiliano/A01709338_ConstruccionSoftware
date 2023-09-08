@@ -11,6 +11,7 @@ router.get('/labs/tienda', tiendaController.get_add);
 router.post('/labs/tienda', tiendaController.post_add);
 router.get('/tienda', tiendaController.get_list);
 
+
 router.get('/labs/discos', discosController.get_add);
 router.post('/labs/discos', discosController.post_add);
 router.get('/discos', discosController.get_list);

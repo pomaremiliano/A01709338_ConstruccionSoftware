@@ -19,9 +19,9 @@
                                 </p>
                             </figure>
                             <div class="media-content">
-                                <button id="boton_producto<%= producto.id %>" class="button is-dark">Precio</button>
-                                <button id="boton_seleccion<%= producto.id %>" class="button is-dark">Seleccionar producto</button>
-                                <figure class="card are-small" id="precio_producto<%= producto.id %>">...</figure>
+                                <button id="boton_producto" class="button is-dark">Precio</button>
+                                <button id="boton_seleccion" class="button is-dark">Seleccionar producto</button>
+                                <figure class="card are-small" id="precio_producto">...</figure>
                             </div>
                         </div>
                     <% } %>
@@ -30,6 +30,7 @@
             <p class= "title is-4">Tiempo desde el último acceso: <%= tiempo_transcurrido %> segundos.</p>
         </div>
     </div>
+    <script src="../public/js/tiendaDOM.js"></script>
 </body>
 
 
