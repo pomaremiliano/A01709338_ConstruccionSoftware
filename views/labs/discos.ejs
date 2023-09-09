@@ -6,7 +6,7 @@
             <img src="https://images.vexels.com/media/users/3/161230/isolated/preview/1fa58bd038c77c9d668475b9f05126a5-ilustracion-de-banda-de-disco-de-vinilo.png" width="80" height="112">
         </a>
         <p class="title is-5 has-text-white"> Mis Discos Favoritos</p>
-
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
     <% for(let disco of discos) { %>
             <div class="column">
                 <div class="card">

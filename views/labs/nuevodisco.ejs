@@ -1,6 +1,7 @@
 <%- include('../includes/labs.head.ejs') %>
 
 <h1 class="title">Agregar Discos Nuevos</h1>
+<input type="hidden" name="_csrf" value="<%= csrfToken %>" >
 <form action="/labs/nuevodisco" method="POST">
     <label for="nombre">Nombre: </label>
     <input id="nombre" name="nombre" class="input" type="varchar" placeholder="Álbum (año)">

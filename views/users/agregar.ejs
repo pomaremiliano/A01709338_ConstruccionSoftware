@@ -13,8 +13,8 @@
             </div>
         </article>
     <% } %>
-
     <form action="/users/agregar" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
         <label for="nombre">Nombre completo: </label>
         <input id="nombre" name="nombre" class="input is-light" type="text" placeholder="Nombre Apellido ">
         <br><br>

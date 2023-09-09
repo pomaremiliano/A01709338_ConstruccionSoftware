@@ -1,5 +1,5 @@
 <%- include('../includes/labs.head.ejs') %>
-
+<input type="hidden" name="_csrf" value="<%= csrfToken %>" >
 <h1 class="title">Agregar Películas Nuevas</h1>
 <form action="/labs/nuevapelicula" method="POST">
     <label for="nombre">Nombre: </label>
