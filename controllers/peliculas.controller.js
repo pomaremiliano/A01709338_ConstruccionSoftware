@@ -3,7 +3,9 @@ const Peliculas= require('../models/peliculas.model');
 
 exports.get_add = (request, response, next) => {
 
-    response.render('labs_list/peliculas.ejs');
+    response.render('labs_list/peliculas.ejs', {
+        username: request.session.username || '',
+    })
 };
 
 exports.post_add = (request, response, next) => {
@@ -18,6 +20,7 @@ exports.post_add = (request, response, next) => {
 
 exports.get_list = (request, response, next) => {
     response.render('labs_list/peliculas.ejs', {
-        peliculas: Peliculas.fetchAll()
+        peliculas: Peliculas.fetchAll(), 
+        username: request.session.username || '',
     });
 }

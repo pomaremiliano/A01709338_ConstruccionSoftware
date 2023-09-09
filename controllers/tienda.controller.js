@@ -2,7 +2,9 @@ const Productos= require('../models/tienda.model');
 
 exports.get_add = (request, response, next) => {
 
-    response.render('labs_list/tienda.ejs');
+    response.render('labs_list/tienda/add.ejs', {
+        username: request.session.username || '',
+    });
 };
 
 exports.post_add = (request, response, next) => {
@@ -24,7 +26,8 @@ exports.get_list = (request, response, next) => {
 
     response.render('labs_list/tienda.ejs', {
         productos: Productos.fetchAll(),
-        tiempo_transcurrido: tiempo_transcurrido
+        tiempo_transcurrido: tiempo_transcurrido,
+        username: request.session.username || '',
     });
 }
 

@@ -4,6 +4,7 @@
     <title>
         Labs A01709338 
     </title>
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -26,6 +27,11 @@
       
           <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
+
+              <a class="navbar-item has-background-grey" href="/users/login">
+                Iniciar Sesión 
+              </a>
+
               <a class="navbar-item has-text-white" href="/labs/preguntas">
                 Preguntas Labs
               </a>
@@ -45,6 +51,10 @@
               <a class="navbar-item has-text-white" href="/labs/peliculas">
                 Películas
               </a>
+
+              <span class="navbar-item">
+                <%= username%>
+              </span>
             </div>
           </div>
         </nav>
@@ -58,15 +68,31 @@
 
     p.title.is-4 {
         color: white; 
+        text-align: center;
+    }
+
+    h3.title.is-4 {
+        color: white; 
+    }
+
+    h1.title.is-4 {
+        color: white; 
+    }
+
+    h1.subtitle {
+        color: white; 
     }
 
     .column {
       margin-bottom: 100px;
       background-color: #333;
+      text-align: center;
+      align-items: center;
     }
 
     .card {
       background-color: #333;
+      align-items: center;
     }
 
     .media {
@@ -82,4 +108,7 @@
         background-color: #333;  
     }
 
+    .p {
+      text-justify: center;
+    }
 </style>
