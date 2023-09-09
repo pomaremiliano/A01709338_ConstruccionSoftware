@@ -5,6 +5,7 @@ exports.get_add = (request, response, next) => {
 
     response.render('labs/nuevapelicula.ejs', {
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     })
 };
 
@@ -31,7 +32,9 @@ exports.get_list = (request, response, next) => {
             console.log(fieldData);
 
             return response.render('labs/peliculas.ejs', {
-                peliculas: rows
+                peliculas: rows,
+                username: request.session.username || '',
+                isLoggedIn: request.session.isLoggedIn || false,
             });
 
         }).catch((error) => {

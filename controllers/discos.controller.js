@@ -5,6 +5,7 @@ exports.get_add = (request, response, next) => {
 
     response.render('labs/nuevodisco.ejs', {
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     })
 };
 
@@ -31,7 +32,9 @@ exports.get_list = (request, response, next) => {
             console.log(fieldData);
 
             return response.render('labs/discos.ejs', {
-                discos: rows
+                discos: rows,
+                username: request.session.username || '',
+                isLoggedIn: request.session.isLoggedIn || false,
             });
 
         }).catch((error) => {

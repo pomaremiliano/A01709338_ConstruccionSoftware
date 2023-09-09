@@ -4,6 +4,7 @@ exports.get_add = (request, response, next) => {
 
     response.render('labs/tienda/add.ejs', {
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     });
 };
 
@@ -28,6 +29,7 @@ exports.get_list = (request, response, next) => {
         productos: Productos.fetchAll(),
         tiempo_transcurrido: tiempo_transcurrido,
         username: request.session.username || '',
+        isLoggedIn: request.session.isLoggedIn || false,
     });
 }
 

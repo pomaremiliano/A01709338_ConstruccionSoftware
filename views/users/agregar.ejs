@@ -1,0 +1,30 @@
+<%- include('../includes/labs.head.ejs') %>
+<div class="section has-background-grey-dark">
+    <h1 class="title is-4">Regístrate. ¡Es gratis!</h1>
+    <h3 class="title is-4">¿Ya tienes una cuenta? <a href="/users/login"> -> Inicia sesión</a></h3>
+    <% if(error) { %>
+        <article class="message is-warning">
+            <div class="message-header">
+                <p>Error en el registro, intentalo de nuevo.</p>
+                <button class="delete" aria-label="delete"></button>
+            </div>
+            <div class="message-body">
+                <strong><%= error.sqlMessage %></strong>.
+            </div>
+        </article>
+    <% } %>
+
+    <form action="/users/agregar" method="POST">
+        <label for="nombre">Nombre completo: </label>
+        <input id="nombre" name="nombre" class="input is-light" type="text" placeholder="Nombre Apellido ">
+        <br><br>
+        <label for="username">username: </label>
+        <input id="username" name="username" class="input is-light" type="text" placeholder="nombreusuario123">
+        <br><br>
+        <label for="password">password: </label>
+        <input id="password" name="password" class="input is-light" type="password" placeholder="*****">
+        <br><br>
+        <input class="button is-light" type="submit" value="Entrar">
+    </form>
+</div>
+<%- include('../includes/labs.foot.ejs') %>

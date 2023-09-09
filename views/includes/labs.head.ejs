@@ -28,33 +28,47 @@
           <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
 
-              <a class="navbar-item has-background-grey" href="/users/login">
-                Iniciar Sesión 
-              </a>
+              <% if (isLoggedIn == false)  { %>
+                <a class="navbar-item has-background-grey" href="/users/agregar">
+                  Crear Cuenta
+                </a>
+                <a class="navbar-item has-background-grey" href="/users/login">
+                  Iniciar Sesion
+                </a>
+              <% } else { %>
+                <a class="navbar-item has-text-white" href="/users/logout">
+                  Salir
+                </a>
+              <% } %>
+              
+              <% if (isLoggedIn == true)  { %>
+                <span class="navbar-item">
+                  <%= username %>
+                </span>
+                <a class="navbar-item has-text-white" href="/labs/preguntas">
+                  Preguntas Labs
+                </a>
+        
+                <a class="navbar-item has-text-white" href="/labs/discos">
+                  Discos
+                </a>
+        
+                <a class="navbar-item has-text-white" href="/labs/nuevodisco">
+                  Agregar discos
+                </a>
+        
+                <a class="navbar-item has-text-white " href="/labs/tienda">
+                  Tienda
+                </a>
+        
+                <a class="navbar-item has-text-white" href="/labs/peliculas">
+                  Películas
+                </a>
 
-              <a class="navbar-item has-text-white" href="/labs/preguntas">
-                Preguntas Labs
-              </a>
-      
-              <a class="navbar-item has-text-white" href="/labs/discos">
-                Discos
-              </a>
-      
-              <a class="navbar-item has-text-white" href="/labs/nuevodisco">
-                Agregar discos
-              </a>
-      
-              <a class="navbar-item has-text-white " href="/labs/tienda">
-                Tienda
-              </a>
-      
-              <a class="navbar-item has-text-white" href="/labs/peliculas">
-                Películas
-              </a>
-
-              <a class="navbar-item has-text-white" href="/labs/nuevapelicula">
-                Agregar películas
-              </a>
+                <a class="navbar-item has-text-white" href="/labs/nuevapelicula">
+                  Agregar películas
+                </a>
+              <% } %>
             </div>
           </div>
         </nav>
@@ -111,4 +125,5 @@
     .p {
       text-justify: center;
     }
+
 </style>

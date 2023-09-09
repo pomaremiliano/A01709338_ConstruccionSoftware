@@ -1,6 +1,7 @@
 <%- include('../includes/labs.head.ejs') %>
-<h1 class="title">Bienvenido</h1>
-<form action="/users/users.views.ejs" method="POST">
+<div class="section has-background-grey-dark">
+<h1 class="title is-4">Bienvenido</h1>
+<form action="/users/login" method="POST">
     <label for="username">Nombre de usuario:</label>
     <input id="username" name="username" class="input is-light" type="text" placeholder="Usuario">
     <br><br>
@@ -9,4 +10,6 @@
     <br><br>
     <input class="button is-light" type="submit" value="Entrar">
 </form>
+</div>
+
 <%- include('../includes/labs.foot.ejs') %>
