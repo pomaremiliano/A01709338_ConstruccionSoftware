@@ -3,7 +3,7 @@ const Peliculas= require('../models/peliculas.model');
 
 exports.get_add = (request, response, next) => {
 
-    response.render('labs_list/peliculas.ejs', {
+    response.render('labs/nuevapelicula.ejs', {
         username: request.session.username || '',
     })
 };
@@ -11,16 +11,32 @@ exports.get_add = (request, response, next) => {
 exports.post_add = (request, response, next) => {
     const pelicula = new Peliculas({
         nombre: request.body.nombre,
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Oxxo_vac%C3%ADo.jpg",
+        imagen: request.body.imagen,
     });
-    pelicula.save();
-    response.redirect('peliculas');
+    pelicula.save()
+        .then(() => {
+            return response.redirect('peliculas');
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('nuevapelicula');
+        });
 }
 
 
 exports.get_list = (request, response, next) => {
-    response.render('labs_list/peliculas.ejs', {
-        peliculas: Peliculas.fetchAll(), 
-        username: request.session.username || '',
-    });
+
+    Peliculas.fetch(request.params.id)
+        .then(([rows, fieldData]) => {
+            console.log(rows);
+            console.log(fieldData);
+
+            return response.render('labs/peliculas.ejs', {
+                peliculas: rows
+            });
+
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('/users/login');
+        });
+
 }

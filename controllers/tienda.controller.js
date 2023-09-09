@@ -2,7 +2,7 @@ const Productos= require('../models/tienda.model');
 
 exports.get_add = (request, response, next) => {
 
-    response.render('labs_list/tienda/add.ejs', {
+    response.render('labs/tienda/add.ejs', {
         username: request.session.username || '',
     });
 };
@@ -10,7 +10,7 @@ exports.get_add = (request, response, next) => {
 exports.post_add = (request, response, next) => {
     const producto = new Productos({
         nombre: request.body.nombre,
-        imagen: "https://upload.wikimedia.org/wikipedia/commons/b/b1/Oxxo_vac%C3%ADo.jpg",
+        imagen: request.body.imagen,
     });
     producto.save();
     response.redirect('tienda');
@@ -24,7 +24,7 @@ exports.get_list = (request, response, next) => {
     const tiempo_transcurrido = (new Date().getTime() - ultimo_acceso.getTime()) / 1000;
     console.log(tiempo_transcurrido);
 
-    response.render('labs_list/tienda.ejs', {
+    response.render('labs/tienda.ejs', {
         productos: Productos.fetchAll(),
         tiempo_transcurrido: tiempo_transcurrido,
         username: request.session.username || '',

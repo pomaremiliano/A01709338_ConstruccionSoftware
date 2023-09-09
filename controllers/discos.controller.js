@@ -3,15 +3,40 @@ const Discos= require('../models/discos.model');
 
 exports.get_add = (request, response, next) => {
 
-    response.render('labs_list/discos.ejs', {
+    response.render('labs/nuevodisco.ejs', {
         username: request.session.username || '',
-    });
+    })
 };
+
+exports.post_add = (request, response, next) => {
+    const discos = new Discos({
+        nombre: request.body.nombre,
+        imagen: request.body.imagen,
+    });
+    discos.save()
+        .then(() => {
+            return response.redirect('discos');
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('nuevodisco');
+        });
+}
 
 
 exports.get_list = (request, response, next) => {
-    response.render('labs_list/discos.ejs', {
-        discos: Discos.fetchAll(), 
-        username: request.session.username || '',
-    });
+
+    Discos.fetch(request.params.id)
+        .then(([rows, fieldData]) => {
+            console.log(rows);
+            console.log(fieldData);
+
+            return response.render('labs/discos.ejs', {
+                discos: rows
+            });
+
+        }).catch((error) => {
+            console.log(error);
+            response.redirect('/users/login');
+        });
+
 }

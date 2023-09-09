@@ -1,0 +1,14 @@
+<%- include('../includes/labs.head.ejs') %>
+
+<h1 class="title">Agregar Películas Nuevas</h1>
+<form action="/labs/nuevapelicula" method="POST">
+    <label for="nombre">Nombre: </label>
+    <input id="nombre" name="nombre" class="input" type="varchar" placeholder="Película - año">
+    <br><br>
+    <label for="imagen">Póster </label>
+    <input id="imagen" name="imagen" class="input" type="varchar" placeholder="link">
+    <br><br>
+    <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
+</form>
+
+<%- include('../includes/labs.foot.ejs') %>
