@@ -1,6 +1,6 @@
 
 <%- include('../includes/labs.head.ejs') %>
-<input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+
 <body>
     <section class="section has-background-black-bis has-text-grey-light">
         <div class="container">
@@ -337,6 +337,23 @@
                     <div class="question">¿Qué otras formas de autentificación existen?</div>
                     <br>
                     <p>Contraseña de un solo uso (OTP), certificados PKI, tecla confidencial defensa, por medio de información biométrica (como la huella dactilar o reconicimiento facial), autentificación en dos pasos (generalmente con un código de un solo uso que se envía a un método de comunicación con el usuario)</p>
+                    <hr>
+                    <div class="question">Preguntas Lab 19</div>
+                    <hr>
+                    <div class="question">¿Qué capacidades le puede dar a una aplicación la implementación de este modelo de datos con respecto al control de acceso?</div>
+                    <br>
+                    <p>La capacidad de restringir o limitar ciertas funcionalidades a usuarios especificos.</p>
+                    <hr>
+                    <div class="question">¿En qué consiste el control de acceso basado en roles?</div>
+                    <br>
+                    <p>En darle ciertos permisos de acciones, navegación, funcionalidades, etc, a los usuarios dependiendo de su rol.</p>
+                    <hr>
+                    <div class="question">Investiguen y describan 2 sistemas, uno que aplique RBAC y uno que no. Realicen un análisis de las ventajas y desventajas de cada uno con respecto al control de acceso.</div>
+                    <br>
+                    <p>Un sistema que aplica RBAC puede ser los servicios en la nube como azure o aws. En los que se le asignan permisos a los usuarios dependiendo del rol en la empresa o organización que pertenecen.
+                        Por otro lado, otro sistema que no aplica RBAC puede ser el sistema de permisos de Linux. En este sistema se le asignan permisos a los usuarios dependiendo de su usuario. Por ejemplo, un usuario administrador puede tener permisos para instalar programas, mientras que un usuario normal no.</p>
+                        <br>
+                        <p>En cuanto a ventajas y desventajas, usar rbac implica un esfuerzo y también una mayor técnica para desarrollarlo, sobre todo si son sistemas grandes y complejos. Pero a la larga termina siendo más mantenible y escalable ya que es una representación muy fiel de los roles en una empresa. Así que el no usar rbac implica que el sistema será más fácil de implementar pero más difícil de mantener conforme crezca o surgan cambios.</p>
                 </article> 
             </div>
         </section>

@@ -5,6 +5,7 @@ exports.get_login = (request, response, next) => {
     response.render('users/users.views.ejs', {
         username: '',
         isLoggedIn: request.session.isLoggedIn || false,
+        privilegios: request.session.privilegios || [],
     });
 };
 exports.post_login = (request, response, next) => {
@@ -17,11 +18,19 @@ exports.post_login = (request, response, next) => {
                     if (doMatch) {
                         request.session.isLoggedIn = true;
                         request.session.user = user;
-                        return request.session.save(err => {
-                            response.redirect('/labs/tienda');
-                        });
+                        Usuario.getPrivilegios(user.id)
+                            .then(([privilegios, fieldData]) => {
+                                console.log(privilegios);
+                                return request.session.save(err => {
+                                    request.session.privilegios = privilegios;
+                                    response.redirect('/labs/nuevodisco');
+                                });
+                            }).catch(error => {
+                                console.log(error);
+                                response.redirect('/users/login');
+                            });
                     }
-                    response.redirect('/users/login');
+                    //response.redirect('/users/login');
                 }).catch(error => {
                     console.log(error);
                     response.redirect('/users/login');
@@ -51,6 +60,7 @@ exports.get_add = (request, response, next) => {
         username: '',
         isLoggedIn: request.session.isLoggedIn || false,
         error: error,
+        privilegios: request.session.privilegios || [],
     });
 };
 exports.post_add = (request, response, next) => {

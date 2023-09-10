@@ -1,5 +1,5 @@
 <%- include('../includes/labs.head.ejs') %>
-<input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+
 <body class="dark-background">
     <div class="container is-fullhd">
         <p class="title is-5-desktop">Tienda</p>
@@ -15,8 +15,8 @@
                     <% for (let producto of productos) { %>
                         <div class="media">
                             <figure class="media-left">
-                                <p class="image is-48x48">
-                                    <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+                                <p class="image is-16by9">
+                                    <iframe class="has-ratio" width="640" height="360"src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
                                 </p>
                             </figure>
                             <div class="media-content">

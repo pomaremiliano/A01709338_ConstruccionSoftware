@@ -43,31 +43,42 @@
               
               <% if (isLoggedIn == true)  { %>
                 <span class="navbar-item">
-                  <%= username %>
+                  <%= username%>
                 </span>
+                <% for(let permiso of privilegios) { %>
+                    <% if (permiso.nombre == 'ver_peliculas') { %>
+                      <a class="navbar-item has-text-white" href="/labs/peliculas">
+                        Películas
+                      </a>
+                    <% } %>
+
+                    <% if (permiso.nombre == 'ver_discos') { %>
+                      <a class="navbar-item has-text-white" href="/labs/discos">
+                        Discos
+                      </a>
+                    <% } %>
+
+                    <% if (permiso.nombre == 'agregar_peliculas') { %>
+                      <a class="navbar-item has-text-white" href="/labs/nuevapelicula">
+                        Agregar películas
+                      </a>
+                    <% } %>
+
+                    <% if (permiso.nombre == 'agregar_discos') { %>
+                      <a class="navbar-item has-text-white" href="/labs/nuevodisco">
+                        Agregar discos
+                      </a>
+                    <% } %>
+
+                <% } %>
                 <a class="navbar-item has-text-white" href="/labs/preguntas">
                   Preguntas Labs
-                </a>
-        
-                <a class="navbar-item has-text-white" href="/labs/discos">
-                  Discos
-                </a>
-        
-                <a class="navbar-item has-text-white" href="/labs/nuevodisco">
-                  Agregar discos
                 </a>
         
                 <a class="navbar-item has-text-white " href="/labs/tienda">
                   Tienda
                 </a>
         
-                <a class="navbar-item has-text-white" href="/labs/peliculas">
-                  Películas
-                </a>
-
-                <a class="navbar-item has-text-white" href="/labs/nuevapelicula">
-                  Agregar películas
-                </a>
               <% } %>
             </div>
           </div>
@@ -125,5 +136,32 @@
     .p {
       text-justify: center;
     }
+
+    #nombre,
+    #imagen {
+    width: 150px;
+    align-content: center;
+    }
+
+    label {
+    color: white;
+    text-align: left;
+    }
+
+    input {
+    margin-bottom: 10px;
+    text-align: justify;
+    }
+
+    .container {
+    justify-content: space-between;
+    align-items: center; 
+    }
+
+    .image {
+      margin: 20px;
+      margin-bottom: 50px;
+    }
+
 
 </style>

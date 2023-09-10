@@ -6,6 +6,8 @@ exports.get_add = (request, response, next) => {
     response.render('labs/nuevodisco.ejs', {
         username: request.session.username || '',
         isLoggedIn: request.session.isLoggedIn || false,
+        privilegios: request.session.privilegios || [],
+        
     })
 };
 
@@ -26,6 +28,8 @@ exports.post_add = (request, response, next) => {
 
 exports.get_list = (request, response, next) => {
 
+    console.log(request.session.privilegios);
+
     Discos.fetch(request.params.id)
         .then(([rows, fieldData]) => {
             console.log(rows);
@@ -35,6 +39,7 @@ exports.get_list = (request, response, next) => {
                 discos: rows,
                 username: request.session.username || '',
                 isLoggedIn: request.session.isLoggedIn || false,
+                privilegios: request.session.privilegios || [],
             });
 
         }).catch((error) => {

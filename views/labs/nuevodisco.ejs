@@ -1,15 +1,17 @@
 <%- include('../includes/labs.head.ejs') %>
 
-<h1 class="title">Agregar Discos Nuevos</h1>
-<input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-<form action="/labs/nuevodisco" method="POST">
-    <label for="nombre">Nombre: </label>
-    <input id="nombre" name="nombre" class="input" type="varchar" placeholder="Álbum (año)">
-    <br><br>
-    <label for="imagen">Portada: </label>
-    <input id="imagen" name="imagen" class="input" type="varchar" placeholder="link">
-    <br><br>
-    <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
-</form>
+<div class="section has-background-grey-dark">
+    <h1 class="title is-4">Agregar Discos Nuevos</h1>
 
+    <form action="/labs/nuevodisco" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        <label for="nombre">Nombre: </label>
+        <input id="nombre" name="nombre" class="input" type="varchar" placeholder="Álbum (año)">
+        <br><br>
+        <label for="imagen">Portada: </label>
+        <input id="imagen" name="imagen" class="input" type="varchar" placeholder="link">
+        <br><br>
+        <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
+    </form>
+</div>
 <%- include('../includes/labs.foot.ejs') %>
