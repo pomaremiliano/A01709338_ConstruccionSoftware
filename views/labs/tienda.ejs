@@ -1,40 +1,47 @@
 <%- include('../includes/labs.head.ejs') %>
 
-<body class="dark-background">
-    <div class="container is-fullhd">
-        <p class="title is-5-desktop">Tienda</p>
-        <div class="is-vcentered">
-            <figure class="image is-128x128">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Oxxo_Logo.svg/1200px-Oxxo_Logo.svg.png" alt="Tienda">
-            </figure>
-        </div>
-        <p class="title is-4">Productos</p>
-        <div class="card">
-            <div class="card-content">
-                <% if (productos.length > 0) { %>
+    <body class="dark-background">
+        <div class="container is-fullhd">
+            <p class="title is-5-desktop">Tienda</p>
+                <figure class="image is-128x128">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Oxxo_Logo.svg/1200px-Oxxo_Logo.svg.png"
+                        alt="Tienda">
+                </figure>
+            <p class="title is-4">Productos</p>
+            <div class="card">
+                <div class="card-content">
                     <% for (let producto of productos) { %>
-                        <div class="media">
-                            <figure class="media-left">
-                                <p class="image is-16by9">
-                                    <iframe class="has-ratio" width="640" height="360"src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
-                                </p>
-                            </figure>
-                            <div class="media-content">
-                                <button id="boton_producto" class="button is-dark">Precio</button>
-                                <button id="boton_seleccion" class="button is-dark">Seleccionar producto</button>
-                                <figure class="card are-small" id="precio_producto">...</figure>
+                        <div class="columns">
+                            <div class="column">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <figure class="image is-128x128">
+                                            <img src="<%= producto.imagen%>" alt="<%= producto.nombre%>">
+                                        </figure>
+                                    </div>
+                                    <div class="media-content">
+                                        <p class="title is-4">
+                                            <%= producto.nombre%>
+                                        </p>
+                                    </div>
+                                    <div class="media-right">
+                                        <button id="boton_producto" class="button is-dark">Precio</button>
+                                        <button id="boton_seleccion" class="button is-dark">Seleccionar
+                                            producto</button>
+                                        <figure class="card are-small" id="precio_producto">...</figure>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <script src="../public/tiendaDOM.js"></script>
-                    <% } %>
+                </div>
                 <% } %>
+
             </div>
-            <p class= "title is-4">Tiempo desde el último acceso: <%= tiempo_transcurrido %> segundos.</p>
+
         </div>
-    </div>
-    
-</body>
+        <p class="title is-4">Tiempo desde el último acceso: <%= tiempo_transcurrido %> segundos.</p>
+    </body>
 
 
 
-<%- include('../includes/labs.foot.ejs') %>
+    <%- include('../includes/labs.foot.ejs') %>

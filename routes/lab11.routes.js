@@ -10,10 +10,12 @@ const canVerPeliculas = require('../util/can-ver-peliculas.js');
 const canAgregarPeliculas = require('../util/can-agregar-peliculas');
 const canVerDiscos = require('../util/can-ver-discos');
 const canAgregarDiscos = require('../util/can-agregar-discos');
+const canAgregarProductos = require('../util/can-agregar-productos');
+const canVerProductos = require('../util/can-ver-productos');
 
-router.get("/labs/tienda", isAuth, tiendaController.get_add);
-router.post("/labs/tienda", isAuth, tiendaController.post_add);
-router.get("/tienda", isAuth, tiendaController.get_list);
+router.get("/nuevoproducto", isAuth, canAgregarProductos, tiendaController.get_add);
+router.post("/nuevoproducto", isAuth, canAgregarProductos, tiendaController.post_add);
+router.get("/tienda", isAuth, canVerProductos, tiendaController.get_list);
 
 router.get("/nuevodisco", isAuth, canAgregarDiscos, discosController.get_add);
 router.post("/nuevodisco", isAuth, canAgregarDiscos, discosController.post_add);

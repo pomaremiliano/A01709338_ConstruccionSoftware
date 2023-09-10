@@ -1,4 +1,4 @@
-
+/*
 let productos = [
     {
         nombre: "Sabritas Adobadas",
@@ -33,20 +33,32 @@ let productos = [
         imagen: "https://supermeat.mx/cdn/shop/products/39047040a11831e1d322d0cb54325a6e.jpg?v=1681238999"
     }
 ];
+*/
+
+const db = require("../util/database");
 
 
 module.exports = class Productos {
-    constructor(nproducto) {
-        this.nombre = nproducto.nombre || "No me han venido a surtir bro :'(";
-        this.imagen = nproducto.imagen || "https://upload.wikimedia.org/wikipedia/commons/b/b1/Oxxo_vac%C3%ADo.jpg";
-    }
-    save() {
-        productos.push(this);
-    }
-    static fetchAll() {
-        return productos;
-    }
-}
+  constructor(producto_nuevo) {
+    this.nombre = producto_nuevo.nombre || "No me han venido a surtir bro :'(";
+    this.imagen = producto_nuevo.imagen || "https://upload.wikimedia.org/wikipedia/commons/b/b1/Oxxo_vac%C3%ADo.jpg";
+  }
+  save() {
+    return db.execute(
+      "INSERT INTO productos(nombre, imagen) VALUES (?, ?)",
+      [this.nombre, this.imagen]
+    );
+  }
 
+  static fetchAll() {
+    return db.execute("SELECT * FROM productos");
+  }
 
-
+  static fetch(id) {
+    if (id) {
+      return db.execute("SELECT * FROM productos WHERE id = ?", [id]);
+    } else {
+      return this.fetchAll();
+    }
+  }
+};

@@ -70,6 +70,12 @@
                       </a>
                     <% } %>
 
+                    <% if (permiso.nombre == 'agregar_productos') { %>
+                      <a class="navbar-item has-text-white" href="/labs/nuevoproducto">
+                        Agregar productos
+                      </a>
+                    <% } %>
+
                 <% } %>
                 <a class="navbar-item has-text-white" href="/labs/preguntas">
                   Preguntas Labs
@@ -126,7 +132,8 @@
     }
 
     .media-left {
-      margin-right: 20px;
+      display: flex;
+      margin-right: 50px;
     }
 
     .dark-background {
@@ -148,18 +155,13 @@
     text-align: left;
     }
 
-    input {
-    margin-bottom: 10px;
-    text-align: justify;
-    }
-
     .container {
     justify-content: space-between;
     align-items: center; 
     }
 
     .image {
-      margin: 20px;
+      margin: 50px;
       margin-bottom: 50px;
     }
 

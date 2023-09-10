@@ -13,18 +13,26 @@
             </div>
         </article>
     <% } %>
+    <br><br>
     <form action="/users/agregar" method="POST">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-        <label for="nombre">Nombre completo: </label>
-        <input id="nombre" name="nombre" class="input is-light" type="text" placeholder="Nombre Apellido ">
+        
+            <div class="field is-small">
+                <label for="nombre">Nombre: </label>
+                <input id="nombre" name="nombre" class="input" type="text" placeholder="Nombre Apellido">
+            </div>
         <br><br>
-        <label for="username">username: </label>
-        <input id="username" name="username" class="input is-light" type="text" placeholder="nombreusuario123">
+            <div class="field is-small">
+                <label for="username">username: </label>
+                <input id="username" name="username" class="input" type="text" placeholder="nombreusuario">
+            </div>
         <br><br>
-        <label for="password">password: </label>
-        <input id="password" name="password" class="input is-light" type="password" placeholder="*****">
+            <div class="field">
+                <label for="password">password: </label>
+                <input id="password" name="password" class="input is-light is-loading" type="password" placeholder="*****">
+            </div>
         <br><br>
-        <input class="button is-light" type="submit" value="Entrar">
+        <input class="button is-light" type="submit" value="Registrarse">
     </form>
 </div>
 <%- include('../includes/labs.foot.ejs') %>
