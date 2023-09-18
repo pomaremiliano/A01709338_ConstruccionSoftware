@@ -21,7 +21,7 @@ const multer = require('multer');
 const fileStorage = multer.diskStorage({
     destination: (request, file, callback) => {
         
-        callback(null, '/public/uploads');
+        callback(null, 'public/uploads');
     },
     filename: (request, file, callback) => {
         
@@ -49,7 +49,7 @@ app.use((request, response, next) => {
   
     console.log(cookies); 
     
-    //console.log(cookies.split('=')[1]);
+    console.log(cookies.split('=')[1]);
 
     response.setHeader('Set-Cookie', 'ultimo_acceso=' + new Date() + '; HttpOnly');
     next(); 

@@ -1,8 +1,9 @@
 
-let seleccion = 0;
+
 
 boton_seleccion= document.getElementById("boton_seleccion");
 boton_seleccion.onclick= () => {
+    let seleccion = 0;
     seleccion ++;
     boton_seleccion.textContent=`Agregar producto (${seleccion})`;
 }

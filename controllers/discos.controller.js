@@ -14,7 +14,7 @@ exports.get_add = (request, response, next) => {
 exports.post_add = (request, response, next) => {
     const discos = new Discos({
         nombre: request.body.nombre,
-        imagen: request.body.imagen,
+        imagen: request.file.filename || request.body.imagen,
     });
     discos.save()
         .then(() => {
