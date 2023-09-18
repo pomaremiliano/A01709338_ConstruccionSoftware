@@ -3,13 +3,15 @@
 <div class="section has-background-grey-dark">
     <h1 class="title is-4">Agregar Discos Nuevos</h1>
 
-    <form action="/labs/nuevodisco" method="POST">
+    <form action="/labs/nuevodisco" method="POST"  enctype="multipart/form-data">
         <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
         <label for="nombre">Nombre: </label>
         <input id="nombre" name="nombre" class="input" type="varchar" placeholder="Álbum (año)">
         <br><br>
         <label for="imagen">Portada: </label>
         <input id="imagen" name="imagen" class="input" type="varchar" placeholder="link">
+        <br><br>
+        <input type="file" name="imagen">
         <br><br>
         <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
     </form>
