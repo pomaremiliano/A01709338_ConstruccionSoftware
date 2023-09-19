@@ -2,18 +2,67 @@
 
 <div class="section has-background-grey-dark">
     <h1 class="title is-4">Agregar Discos Nuevos</h1>
-
-    <form action="/labs/nuevodisco" method="POST"  enctype="multipart/form-data">
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-        <label for="nombre">Nombre: </label>
-        <input id="nombre" name="nombre" class="input" type="varchar" placeholder="Álbum (año)">
-        <br><br>
-        <label for="imagen">Portada: </label>
-        <input id="imagen" name="imagen" class="input" type="varchar" placeholder="link">
-        <br><br>
-        <input type="file" name="imagen">
-        <br><br>
-        <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
+    <form action="/labs/nuevodisco" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <div class="field is-horizontal">
+            <div class="field-label is-normal">
+                <label for="nombre" class="label">Nombre: </label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <input id="nombre" name="nombre" class="input" type="text" placeholder="Álbum - Artista (año)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <label for="imagen" class="label">Portada: </label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <input id="imagen" name="imagen" class="input" type="text" placeholder="link">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-label">
+                <label for="imagen" class="label">Subir Portada: </label>
+            </div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="file has-name">
+                        <label class="file-label">
+                            <input class="file-input" type="file" name="imagen">
+                            <span class="file-cta">
+                                <span class="file-icon">
+                                    <i class="fas fa-upload"></i>
+                                </span>
+                                <span class="file-label">
+                                    Choose a file…
+                                </span>
+                            </span>
+                            <span class="file-name">
+                                No file selected
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="field is-horizontal">
+            <div class="field-label"></div>
+            <div class="field-body">
+                <div class="field">
+                    <div class="control">
+                        <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
+                    </div>
+                </div>
+            </div>
+        </div>
     </form>
 </div>
 <%- include('../includes/labs.foot.ejs') %>

@@ -31,6 +31,7 @@ const fileStorage = multer.diskStorage({
 
 app.use(multer({ storage: fileStorage }).single('imagen')); 
 
+
 const csrf = require('csurf');
 const csrfProtection = csrf();
 app.use(csrfProtection); 
@@ -38,6 +39,7 @@ app.use((request, response, next) => {
     response.locals.csrfToken = request.csrfToken();
     next();
 });
+
 
 
 //Middleware
@@ -49,7 +51,7 @@ app.use((request, response, next) => {
   
     console.log(cookies); 
     
-    console.log(cookies.split('=')[1]);
+    //console.log(cookies.split('=')[1]);
 
     response.setHeader('Set-Cookie', 'ultimo_acceso=' + new Date() + '; HttpOnly');
     next(); 
