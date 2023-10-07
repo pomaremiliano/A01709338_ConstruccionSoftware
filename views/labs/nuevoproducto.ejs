@@ -1,20 +1,20 @@
 <%- include('../includes/labs.head.ejs') %>
 
-<div class="section has-background-grey-dark">
+    <div class="section has-background-grey-dark">
 
-    <h1 class="title is-4">Agregar productos a la tienda</h1>
+        <h1 class="title is-4">Agregar productos a la tienda</h1>
 
-    <form action="/labs/nuevoproducto" method="POST">
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-        <label for="nombre">Nombre: </label>
-        <input id="nombre" name="nombre" class="input" type="varchar" placeholder="papas">
-        <br><br>
-        <label for="imagen">Foto del producto: </label>
-        <input id="imagen" name="imagen" class="input" type="varchar" placeholder="link">
-        <br><br>
-        <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
-    </form>
+        <form action="/labs/nuevoproducto" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <label for="nombre">Nombre: </label>
+            <input id="nombre" name="nombre" class="input" type="varchar" placeholder="papas">
+            <br><br>
+            <label for="imagen">Foto del producto: </label>
+            <input id="imagen" name="imagen" class="input" type="varchar" placeholder="link">
+            <br><br>
+            <input id="registrar" name="registrar" type="submit" value="Registrar" class="button is-info">
+        </form>
 
-</div>
+    </div>
 
-<%- include('../includes/labs.foot.ejs') %>
+    <%- include('../includes/labs.foot.ejs') %>

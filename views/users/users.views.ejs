@@ -1,17 +1,17 @@
 <%- include('../includes/labs.head.ejs') %>
-<div class="section has-background-grey-dark">
-<h1 class="title is-4">Bienvenido</h1>
+    <div class="section has-background-grey-dark">
+        <h1 class="title is-4">Bienvenido</h1>
 
-<form action="/users/login" method="POST">
-    <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-    <label for="username">Nombre de usuario:</label>
-    <input id="username" name="username" class="input is-light" type="text" placeholder="Usuario">
-    <br><br>
-    <label for="password">Password:</label>
-    <input id="password" name="password" class="input is-light" type="password" placeholder="Contraseña">
-    <br><br>
-    <input class="button is-light" type="submit" value="Entrar">
-</form>
-</div>
+        <form action="/users/login" method="POST">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <label for="username">Nombre de usuario:</label>
+            <input id="username" name="username" class="input is-light" type="text" placeholder="Usuario">
+            <br><br>
+            <label for="password">Password:</label>
+            <input id="password" name="password" class="input is-light" type="password" placeholder="Contraseña">
+            <br><br>
+            <input class="button is-light" type="submit" value="Entrar">
+        </form>
+    </div>
 
-<%- include('../includes/labs.foot.ejs') %>
+    <%- include('../includes/labs.foot.ejs') %>

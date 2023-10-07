@@ -37,17 +37,18 @@ let productos = [
 
 const db = require("../util/database");
 
-
 module.exports = class Productos {
   constructor(producto_nuevo) {
     this.nombre = producto_nuevo.nombre || "No me han venido a surtir bro :'(";
-    this.imagen = producto_nuevo.imagen || "https://upload.wikimedia.org/wikipedia/commons/b/b1/Oxxo_vac%C3%ADo.jpg";
+    this.imagen =
+      producto_nuevo.imagen ||
+      "https://upload.wikimedia.org/wikipedia/commons/b/b1/Oxxo_vac%C3%ADo.jpg";
   }
   save() {
-    return db.execute(
-      "INSERT INTO productos(nombre, imagen) VALUES (?, ?)",
-      [this.nombre, this.imagen]
-    );
+    return db.execute("INSERT INTO productos(nombre, imagen) VALUES (?, ?)", [
+      this.nombre,
+      this.imagen,
+    ]);
   }
 
   static fetchAll() {

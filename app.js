@@ -36,7 +36,6 @@ const fileStorage = multer.diskStorage({
   },
 });
 
-
 app.use(
   multer({
     storage: fileStorage,

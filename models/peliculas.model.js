@@ -1,17 +1,15 @@
 const db = require("../util/database");
 
-
 module.exports = class Peliculas {
   constructor(pelicula_nuevo) {
     this.nombre = pelicula_nuevo.nombre || ":'(";
-    this.imagen =
-      pelicula_nuevo.imagen;
+    this.imagen = pelicula_nuevo.imagen;
   }
   save() {
-    return db.execute(
-      "INSERT INTO peliculas(nombre, imagen) VALUES (?, ?)",
-      [this.nombre, this.imagen]
-    );
+    return db.execute("INSERT INTO peliculas(nombre, imagen) VALUES (?, ?)", [
+      this.nombre,
+      this.imagen,
+    ]);
   }
 
   static fetchAll() {

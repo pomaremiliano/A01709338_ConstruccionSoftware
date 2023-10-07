@@ -1,117 +1,119 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>
-        Labs A01709338 
-    </title>
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
-          <div class="navbar-brand">
-            <div class="box has-background-black-bis">
-                <h1 class="title is-1-desktop has-text-white">Labs Tc2005b</h1>
-                <h2 class="subtitle is-1-desktop has-text-white">Jorge Emiliano Pomar A01709338</h2>
-            </div>
-      
-            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-            </a>
-          </div>
-      
-          <div id="navbarBasicExample" class="navbar-menu">
-            <div class="navbar-start">
 
-              <% if (isLoggedIn == false)  { %>
-                <a class="navbar-item has-background-grey" href="/users/agregar">
-                  Crear Cuenta
-                </a>
-                <a class="navbar-item has-background-grey" href="/users/login">
-                  Iniciar Sesion
-                </a>
-              <% } else { %>
-                <a class="navbar-item has-text-white" href="/users/logout">
-                  Salir
-                </a>
+<head>
+  <title>
+    Labs A01709338
+  </title>
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <div class="box has-background-black-bis">
+          <h1 class="title is-1-desktop has-text-white">Labs Tc2005b</h1>
+          <h2 class="subtitle is-1-desktop has-text-white">Jorge Emiliano Pomar A01709338</h2>
+        </div>
+
+        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+
+          <% if (isLoggedIn==false) { %>
+            <a class="navbar-item has-background-grey" href="/users/agregar">
+              Crear Cuenta
+            </a>
+            <a class="navbar-item has-background-grey" href="/users/login">
+              Iniciar Sesion
+            </a>
+            <% } else { %>
+              <a class="navbar-item has-text-white" href="/users/logout">
+                Salir
+              </a>
               <% } %>
-              
-              <% if (isLoggedIn == true)  { %>
-                <span class="navbar-item">
-                  <%= username%>
-                </span>
-                <% for(let permiso of privilegios) { %>
-                    <% if (permiso.nombre == 'ver_peliculas') { %>
+
+                <% if (isLoggedIn==true) { %>
+                  <span class="navbar-item">
+                    <%= username%>
+                  </span>
+                  <% for(let permiso of privilegios) { %>
+                    <% if (permiso.nombre=='ver_peliculas' ) { %>
                       <a class="navbar-item has-text-white" href="/labs/peliculas">
                         Películas
                       </a>
-                    <% } %>
+                      <% } %>
 
-                    <% if (permiso.nombre == 'ver_discos') { %>
-                      <a class="navbar-item has-text-white" href="/labs/discos">
-                        Discos
-                      </a>
-                    <% } %>
+                        <% if (permiso.nombre=='ver_discos' ) { %>
+                          <a class="navbar-item has-text-white" href="/labs/discos">
+                            Discos
+                          </a>
+                          <% } %>
 
-                    <% if (permiso.nombre == 'agregar_peliculas') { %>
-                      <a class="navbar-item has-text-white" href="/labs/nuevapelicula">
-                        Agregar películas
-                      </a>
-                    <% } %>
+                            <% if (permiso.nombre=='agregar_peliculas' ) { %>
+                              <a class="navbar-item has-text-white" href="/labs/nuevapelicula">
+                                Agregar películas
+                              </a>
+                              <% } %>
 
-                    <% if (permiso.nombre == 'agregar_discos') { %>
-                      <a class="navbar-item has-text-white" href="/labs/nuevodisco">
-                        Agregar discos
-                      </a>
-                    <% } %>
+                                <% if (permiso.nombre=='agregar_discos' ) { %>
+                                  <a class="navbar-item has-text-white" href="/labs/nuevodisco">
+                                    Agregar discos
+                                  </a>
+                                  <% } %>
 
-                    <% if (permiso.nombre == 'agregar_productos') { %>
-                      <a class="navbar-item has-text-white" href="/labs/nuevoproducto">
-                        Agregar productos
-                      </a>
-                    <% } %>
+                                    <% if (permiso.nombre=='agregar_productos' ) { %>
+                                      <a class="navbar-item has-text-white" href="/labs/nuevoproducto">
+                                        Agregar productos
+                                      </a>
+                                      <% } %>
 
-                <% } %>
-                <a class="navbar-item has-text-white" href="/labs/preguntas">
-                  Preguntas Labs
-                </a>
-        
-                <a class="navbar-item has-text-white " href="/labs/tienda">
-                  Tienda
-                </a>
-        
-              <% } %>
-            </div>
-          </div>
-        </nav>
-    </header>
+                                        <% } %>
+                                          <a class="navbar-item has-text-white" href="/labs/preguntas">
+                                            Preguntas Labs
+                                          </a>
 
-<style>
+                                          <a class="navbar-item has-text-white " href="/labs/tienda">
+                                            Tienda
+                                          </a>
+
+                                          <% } %>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <style>
     p.title.is-5-desktop {
-        color: white; 
-        text-align: center;
+      color: white;
+      text-align: center;
     }
 
     p.title.is-4 {
-        color: white; 
-        text-align: center;
+      color: white;
+      text-align: center;
     }
 
     h3.title.is-4 {
-        color: white; 
+      color: white;
     }
 
     h1.title.is-4 {
-        color: white; 
+      color: white;
     }
 
     h1.subtitle {
-        color: white; 
+      color: white;
     }
 
     .column {
@@ -128,7 +130,7 @@
 
     .media {
       display: flex;
-      align-items: center; 
+      align-items: center;
     }
 
     .media-left {
@@ -137,7 +139,7 @@
     }
 
     .dark-background {
-        background-color: #333;  
+      background-color: #333;
     }
 
     .p {
@@ -146,18 +148,18 @@
 
     #nombre,
     #imagen {
-    width: 150px;
-    align-content: center;
+      width: 150px;
+      align-content: center;
     }
 
     label {
-    color: white;
-    text-align: left;
+      color: white;
+      text-align: left;
     }
 
     .container {
-    justify-content: space-between;
-    align-items: center; 
+      justify-content: space-between;
+      align-items: center;
     }
 
     .image {
@@ -168,6 +170,4 @@
     .label {
       color: white;
     }
-
-
-</style>
+  </style>

@@ -1,22 +1,24 @@
 const async_quitar = (id) => {
-    const csrf = document.getElementById('_csrf').value;
+  const csrf = document.getElementById("_csrf").value;
 
-    fetch('/peliculas/delete', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'csrf-token': csrf
-        },
-        body: JSON.stringify({id: id})
-    }).then(result => {
-        console.log(result);
-        return result.json(); //Regresa otra promesa
-    }).then(data => {
-        let html = "";
-      
-        if (data.peliculas.length > 0) {
-          data.peliculas.forEach(disco => {
-            html += `
+  fetch("/peliculas/delete", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "csrf-token": csrf,
+    },
+    body: JSON.stringify({ id: id }),
+  })
+    .then((result) => {
+      console.log(result);
+      return result.json(); //Regresa otra promesa
+    })
+    .then((data) => {
+      let html = "";
+
+      if (data.peliculas.length > 0) {
+        data.peliculas.forEach((disco) => {
+          html += `
               <div class="column">
                 <div class="card">
                   <div class="card-content">
@@ -35,16 +37,16 @@ const async_quitar = (id) => {
                 </div>
               </div>
             `;
-          });
-        } else {
-          html =  `<p>No hay discos disponibles.</p>`;
-        }
+        });
+      } else {
+        html = `<p>No hay discos disponibles.</p>`;
+      }
 
-        html += `</div>`;
-        document.getElementById("disco").innerHTML = html;
-
-    }).catch(err => {
-        console.log(err);
+      html += `</div>`;
+      document.getElementById("disco").innerHTML = html;
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
 //document.getElementById('').click = accion_asincrona;
