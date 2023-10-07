@@ -16,3 +16,4 @@ document.getElementById("boton_producto").onclick = () => {
     document.getElementById("precio_producto").textContent = `Precio con IVA: $ ${iva}.`;
     
 }
+

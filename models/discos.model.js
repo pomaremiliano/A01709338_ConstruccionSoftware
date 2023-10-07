@@ -5,13 +5,13 @@ const db = require("../util/database");
 module.exports = class Discos {
   constructor(disco_nuevo) {
     this.nombre = disco_nuevo.nombre || ":'(";
-    this.imagen =
-      disco_nuevo.imagen;
+    this.imagend =
+      disco_nuevo.imagend;
   }
   save() {
     return db.execute(
       "INSERT INTO discos(nombre, imagen) VALUES (?, ?)",
-      [this.nombre, this.imagen]
+      [this.nombre, this.imagend]
     );
   }
 
@@ -25,6 +25,10 @@ module.exports = class Discos {
     } else {
       return this.fetchAll();
     }
+  }
+
+  static delete(id) {
+    return db.execute("DELETE FROM discos WHERE id = ?", [id]);
   }
 };
 

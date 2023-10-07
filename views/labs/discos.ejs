@@ -6,7 +6,9 @@
             <img src="https://images.vexels.com/media/users/3/161230/isolated/preview/1fa58bd038c77c9d668475b9f05126a5-ilustracion-de-banda-de-disco-de-vinilo.png" width="80" height="112">
         </a>
         <p class="title is-5 has-text-white"> Mis Discos Favoritos</p>
-        
+        <input id="_csrf" type="hidden" name="_csrf" value="<%= csrfToken %>" >
+
+        <div id="disco">
     <% for(let disco of discos) { %>
             <div class="column">
                 <div class="card">
@@ -14,7 +16,8 @@
                         <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-128x128">
-                                        <img src="/uploads/<%= disco.imagen %>" alt="<%= disco.nombre%>">
+                                        <img src="public/uploads<%= disco.imagend%>" alt="<%= disco.nombre%>">
+                                        <button class="button is-dark" onclick= "async_quitar('<%= disco.id%>')">Quitar</button>
                                     </figure>
                                 </div>
                             <div class="media-content">
@@ -25,6 +28,8 @@
                 </div>
             </div>
     <% } %>
+        </div>
 
+    <script src="/js/quitar.js"></script>
 
 <%- include('../includes/labs.foot.ejs') %>

@@ -19,6 +19,7 @@ router.get("/tienda", isAuth, canVerProductos, tiendaController.get_list);
 
 router.get("/nuevodisco", isAuth, canAgregarDiscos, discosController.get_add);
 router.post("/nuevodisco", isAuth, canAgregarDiscos, discosController.post_add);
+router.post("/delete", isAuth, canAgregarDiscos, discosController.post_delete);
 router.get("/discos", isAuth, canVerDiscos, discosController.get_list);
 
 router.get("/nuevapelicula", isAuth, canAgregarPeliculas, peliculasController.get_add);

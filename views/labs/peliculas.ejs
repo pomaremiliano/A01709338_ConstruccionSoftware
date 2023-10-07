@@ -16,15 +16,8 @@
                             <div class="media">
                                 <div class="media-left">
                                     <figure class="image is-128x128">
-                                        <% if(!pelicula.imagen) { %>
-                                            <img src="/uploads/<%= pelicula.imagen%>" 
+                                            <img src="<%= pelicula.imagen%>" 
                                             alt="<%= pelicula.nombre%>">
-
-                                        <% } else { %>
-                                            <img src="<%= pelicula.imagen%>"
-                                                alt="<%= pelicula.nombre%>">
-                                        <% } %>
-                                        
                                     </figure>
                                 </div>
                                 <div class="media-content">

@@ -13,7 +13,7 @@ exports.get_add = (request, response, next) => {
 exports.post_add = (request, response, next) => {
     const pelicula = new Peliculas({
         nombre: request.body.nombre,
-        imagen: request.file.filename || request.body.imagen,
+        imagen: request.body.imagen,
     });
     pelicula.save()
         .then(() => {
