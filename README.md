@@ -40,7 +40,7 @@ Para contribuir en el proyecto:
 
 ## Credits
 
-pomaremiliano
+@pomaremiliano
 
 ## License
 
