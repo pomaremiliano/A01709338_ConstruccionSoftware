@@ -2,34 +2,34 @@
 // Por default todo es asincrono en node.js
 console.log("hola desde node!");
 
-const filesystem = require('fs');
-filesystem.writeFileSync('hola.txt','Hola desde node'); // escribir de forma sincrona en un archivo. 
+const filesystem = require("fs");
+filesystem.writeFileSync("hola.txt", "Hola desde node"); // escribir de forma sincrona en un archivo.
 
 // codigo asincrono: se puede ejecutar a cualquier momento no necesariamente de manera secuencial. Casi todas las operaciones que normalmente bloquearia el sistema, en node js no se bloquearian como write file.
 
 console.log("Ya acabe de escribir");
 
-setTimeout(()=>{console.error("h")},11000); // se ejecuta hasta los 11 segundos (milisegundos)
+setTimeout(() => {
+  console.error("h");
+}, 11000); // se ejecuta hasta los 11 segundos (milisegundos)
 
 // funcion asincrona de manera ordenada
 const arreglo = [5000, 60, 90, 100, 10, 20, 10000, 0, 120, 2000, 340, 1000, 50];
 for (let item of arreglo) {
-    setTimeout(() => {
-        console.log(item);
-    }, item);
+  setTimeout(() => {
+    console.log(item);
+  }, item);
 }
 
+const http = require("http"); // contiene funciones para recibir peticiones y mandar respuestas de http
 
-const http = require('http'); // contiene funciones para recibir peticiones y mandar respuestas de http
-
-
-// Createserver: recibe prototipo request y response. Request es un objeto 
-const server = http.createServer((request, response) => { 
-    console.log(request.url);
-    console.log(request.method);
-    if (request.url == "/") {
-        response.setHeader('Content-Type', 'text/html');
-        response.write(`
+// Createserver: recibe prototipo request y response. Request es un objeto
+const server = http.createServer((request, response) => {
+  console.log(request.url);
+  console.log(request.method);
+  if (request.url == "/") {
+    response.setHeader("Content-Type", "text/html");
+    response.write(`
     <!DOCTYPE html>
     <html>
     <head>
@@ -97,8 +97,7 @@ const server = http.createServer((request, response) => {
 `);
 
     response.end();
-
-} else if(request.url == "/registrar" && request.method == "GET") {
+  } else if (request.url == "/registrar" && request.method == "GET") {
     response.write(`
     <!DOCTYPE html>
     <html>
@@ -146,34 +145,36 @@ const server = http.createServer((request, response) => {
     </html>`);
 
     response.end();
-
-} else if(request.url == "/new" && request.method == "POST") { 
-    
+  } else if (request.url == "/new" && request.method == "POST") {
     const datos = [];
-    request.on('data', (dato) => {
-        // console.log(dato);
-        datos.push(dato);
+    request.on("data", (dato) => {
+      // console.log(dato);
+      datos.push(dato);
     });
-    return request.on('end', () => {
-        const datos_completos = Buffer.concat(datos).toString();
-        console.log(datos_completos);
-        const primera_variable = datos_completos.split('&')[0];
-        console.log(primera_variable);
-        const primer_valor = primera_variable.split('=')[1];
-        console.log(primer_valor);
-        const album = datos_completos.split('&')[1].split('=')[1];
-        console.log(album); 
-        response.write(`El disco fue registrado.`);
-        const filesystem = require('fs');
-        filesystem.writeFile('datos.txt', datos_completos, { flag: 'a+' }, err => {
-            if (err) {
-              console.error(err);
-            }
-          });
-        return response.end();
+    return request.on("end", () => {
+      const datos_completos = Buffer.concat(datos).toString();
+      console.log(datos_completos);
+      const primera_variable = datos_completos.split("&")[0];
+      console.log(primera_variable);
+      const primer_valor = primera_variable.split("=")[1];
+      console.log(primer_valor);
+      const album = datos_completos.split("&")[1].split("=")[1];
+      console.log(album);
+      response.write(`El disco fue registrado.`);
+      const filesystem = require("fs");
+      filesystem.writeFile(
+        "datos.txt",
+        datos_completos,
+        { flag: "a+" },
+        (err) => {
+          if (err) {
+            console.error(err);
+          }
+        }
+      );
+      return response.end();
     });
-
-} else if(request.url == "/tienda" && request.method == "GET") {
+  } else if (request.url == "/tienda" && request.method == "GET") {
     response.write(`
     <!DOCTYPE html>
     <html>
@@ -224,8 +225,7 @@ const server = http.createServer((request, response) => {
     </html>
     `);
     response.end();
-
-} else {
+  } else {
     response.statusCode = 404;
     response.write(`    
     <!DOCTYPE html>
@@ -266,9 +266,7 @@ const server = http.createServer((request, response) => {
     `);
 
     response.end();
-}
-
+  }
 });
 
 server.listen(3000); // necesita de una funcion que escuche. El numero indica el puerto en el que se van a esuchar las peticiones (se recomienda mas de 1000 por si estan ocupados)
-

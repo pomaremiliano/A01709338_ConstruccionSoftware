@@ -1,41 +1,35 @@
 <%- include('../includes/labs.head.ejs') %>
-<body>
-    <section class="section has-background-black-bis  has-text-white-bis">
-        <p class="title is-5-desktop">Mis peliculas favoritas</p>
-        <div class="media-left">
-            <figure class="image is-48x48">
-                <img src="https://cdn-icons-png.flaticon.com/512/2991/2991552.png"
-                    alt="logo">
-            </figure>
-        </div>
-        
-        <hr>
-        <% for(let pelicula of peliculas) { %>
-            <div class="columns">
-                <div class="column">
-                            <div class="media">
-                                <div class="media-left">
-                                    <figure class="image is-128x128">
-                                        <% if(!pelicula.imagen) { %>
-                                            <img src="/uploads/<%= pelicula.imagen%>" 
-                                            alt="<%= pelicula.nombre%>">
 
-                                        <% } else { %>
-                                            <img src="<%= pelicula.imagen%>"
-                                                alt="<%= pelicula.nombre%>">
-                                        <% } %>
-                                        
-                                    </figure>
-                                </div>
-                                <div class="media-content">
-                                    <p class="title is-4"><%= pelicula.nombre%></p>
-                                </div>
+    <body>
+        <section class="section has-background-black-bis  has-text-white-bis">
+            <p class="title is-5-desktop">Mis peliculas favoritas</p>
+            <div class="media-left">
+                <figure class="image is-48x48">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991552.png" alt="logo">
+                </figure>
+            </div>
+
+            <hr>
+            <% for(let pelicula of peliculas) { %>
+                <div class="columns">
+                    <div class="column">
+                        <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-128x128">
+                                    <img src="<%= pelicula.imagen%>" alt="<%= pelicula.nombre%>">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">
+                                    <%= pelicula.nombre%>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </div>
-        <% } %>
-    </section>
-</body>
+                </div>
+                <% } %>
+        </section>
+    </body>
 
-<%- include('../includes/labs.foot.ejs') %>
+    <%- include('../includes/labs.foot.ejs') %>
