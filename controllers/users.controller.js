@@ -24,7 +24,7 @@ exports.post_login = (request, response, next) => {
                   console.log(privilegios);
                   return request.session.save((err) => {
                     request.session.privilegios = privilegios;
-                    response.redirect("/labs/nuevodisco");
+                    response.redirect("/nuevodisco");
                   });
                 })
                 .catch((error) => {

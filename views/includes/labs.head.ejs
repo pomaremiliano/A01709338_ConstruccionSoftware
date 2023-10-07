@@ -5,7 +5,7 @@
   <title>
     Labs A01709338
   </title>
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <link rel="icon" ref="public/favicon.ico">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -49,41 +49,41 @@
                   </span>
                   <% for(let permiso of privilegios) { %>
                     <% if (permiso.nombre=='ver_peliculas' ) { %>
-                      <a class="navbar-item has-text-white" href="/labs/peliculas">
+                      <a class="navbar-item has-text-white" href="/peliculas">
                         Películas
                       </a>
                       <% } %>
 
                         <% if (permiso.nombre=='ver_discos' ) { %>
-                          <a class="navbar-item has-text-white" href="/labs/discos">
+                          <a class="navbar-item has-text-white" href="/discos">
                             Discos
                           </a>
                           <% } %>
 
                             <% if (permiso.nombre=='agregar_peliculas' ) { %>
-                              <a class="navbar-item has-text-white" href="/labs/nuevapelicula">
+                              <a class="navbar-item has-text-white" href="/nuevapelicula">
                                 Agregar películas
                               </a>
                               <% } %>
 
                                 <% if (permiso.nombre=='agregar_discos' ) { %>
-                                  <a class="navbar-item has-text-white" href="/labs/nuevodisco">
+                                  <a class="navbar-item has-text-white" href="/nuevodisco">
                                     Agregar discos
                                   </a>
                                   <% } %>
 
                                     <% if (permiso.nombre=='agregar_productos' ) { %>
-                                      <a class="navbar-item has-text-white" href="/labs/nuevoproducto">
+                                      <a class="navbar-item has-text-white" href="/nuevoproducto">
                                         Agregar productos
                                       </a>
                                       <% } %>
 
                                         <% } %>
-                                          <a class="navbar-item has-text-white" href="/labs/preguntas">
+                                          <a class="navbar-item has-text-white" href="/preguntas">
                                             Preguntas Labs
                                           </a>
 
-                                          <a class="navbar-item has-text-white " href="/labs/tienda">
+                                          <a class="navbar-item has-text-white " href="/tienda">
                                             Tienda
                                           </a>
 

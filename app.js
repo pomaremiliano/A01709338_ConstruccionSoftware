@@ -1,14 +1,11 @@
 const express = require("express");
 const app = express();
+
 app.set("view engine", "ejs");
 app.set("views", "views");
 
 const path = require("path");
-const morgan = require("morgan");
-
-app.use(morgan("dev"));
-
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, 'public')));
 
 const session = require("express-session");
 app.use(
@@ -29,7 +26,7 @@ const multer = require("multer");
 
 const fileStorage = multer.diskStorage({
   destination: (request, file, callback) => {
-    callback(null, "public/uploads");
+    callback(null, 'public/uploads');
   },
   filename: (request, file, callback) => {
     callback(null, new Date().getMilliseconds() + file.originalname);
@@ -39,7 +36,7 @@ const fileStorage = multer.diskStorage({
 app.use(
   multer({
     storage: fileStorage,
-  }).single("imagend")
+  }).single('imagend')
 );
 
 const csrf = require("csurf");
@@ -72,11 +69,12 @@ const rutasLabs = require("./routes/lab11.routes");
 const rutasUsuarios = require("./routes/users.routes");
 
 app.use("/users", rutasUsuarios);
-app.use("/labs", rutasLabs);
+app.use("/", rutasLabs);
 app.use("/tienda", rutasLabs);
 app.use("/peliculas", rutasLabs);
 app.use("/nuevodisco", rutasLabs);
 app.use("/preguntas", rutasLabs);
+app.post("/delete", rutasLabs);
 
 app.use((request, response, next) => {
   response.statusCode = 404;

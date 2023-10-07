@@ -1,7 +1,7 @@
 const async_quitar = (id) => {
   const csrf = document.getElementById("_csrf").value;
 
-  fetch("/peliculas/delete", {
+  fetch("/delete", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -16,37 +16,32 @@ const async_quitar = (id) => {
     .then((data) => {
       let html = "";
 
-      if (data.peliculas.length > 0) {
-        data.peliculas.forEach((disco) => {
-          html += `
-              <div class="column">
+      for (let disco of data.discos) {
+        html += `<div class="columns">`;
+        html +=
+          `<div class="column">
                 <div class="card">
                   <div class="card-content">
                     <div class="media">
                       <div class="media-left">
                         <figure class="image is-128x128">
-                          <img src="public/uploads/${disco.imagend}" alt="${disco.nombre}">
-                          <button class="button is-dark" onclick="async_quitar('${disco.id}')">Quitar</button>
+                          <img src="public/uploads` + disco.imagend + `" alt="` + disco.nombre + `">
+                          <button class="button is-dark" onclick=async_quitar("` + disco.id + `")>Quitar</button>
                         </figure>
                       </div>
                       <div class="media-content">
-                        <p class="title is-4">${disco.nombre}</p>
+                        <p class="title is-4">` + disco.nombre + ` </p>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            `;
-        });
-      } else {
-        html = `<p>No hay discos disponibles.</p>`;
-      }
-
+              </div> 
+              `;
+            }
       html += `</div>`;
-      document.getElementById("disco").innerHTML = html;
+      document.getElementById("discos").innerHTML = html;
     })
     .catch((err) => {
       console.log(err);
     });
 };
-//document.getElementById('').click = accion_asincrona;

@@ -33,8 +33,8 @@ exports.get_list = (request, response, next) => {
       console.log(fieldData);
 
       return response.render("labs/discos.ejs", {
-        discos: rows || [],
-        username: request.session.username || "",
+        discos: rows,
+        username: request.session.username || '',
         isLoggedIn: request.session.isLoggedIn || false,
         privilegios: request.session.privilegios || [],
       });

@@ -27,10 +27,6 @@ router.post(
 );
 router.get("/tienda", isAuth, canVerProductos, tiendaController.get_list);
 
-router.get("/nuevodisco", isAuth, canAgregarDiscos, discosController.get_add);
-router.post("/nuevodisco", isAuth, canAgregarDiscos, discosController.post_add);
-router.post("/delete", isAuth, canAgregarDiscos, discosController.post_delete);
-router.get("/discos", isAuth, canVerDiscos, discosController.get_list);
 
 router.get(
   "/nuevapelicula",
@@ -52,11 +48,16 @@ router.get(
   peliculasController.get_list
 );
 
-router.get("/labs/preguntas", isAuth, preguntasController.get_add);
-router.post("/labs/preguntas", isAuth, preguntasController.post_add);
+router.get("/preguntas", isAuth, preguntasController.get_add);
+router.post("/preguntas", isAuth, preguntasController.post_add);
 router.get("/preguntas", isAuth, preguntasController.get_list);
 
-router.post("/labs", (request, response, next) => {
+router.get("/nuevodisco", isAuth, canAgregarDiscos, discosController.get_add);
+router.post("/nuevodisco", isAuth, canAgregarDiscos, discosController.post_add);
+router.get("/discos", isAuth, canVerDiscos, discosController.get_list);
+router.post("/delete", isAuth, canAgregarDiscos, discosController.post_delete);
+
+router.post("/", (request, response, next) => {
   console.log(request.body);
 
   response.redirect("/preguntas");

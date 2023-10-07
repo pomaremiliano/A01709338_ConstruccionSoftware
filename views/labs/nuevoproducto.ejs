@@ -4,7 +4,7 @@
 
         <h1 class="title is-4">Agregar productos a la tienda</h1>
 
-        <form action="/labs/nuevoproducto" method="POST">
+        <form action="/nuevoproducto" method="POST">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <label for="nombre">Nombre: </label>
             <input id="nombre" name="nombre" class="input" type="varchar" placeholder="papas">
